@@ -21,22 +21,22 @@
  <objectgroup name="Eventos">
   <object id="3" x="1186.67" y="1502.67" width="29.3333" height="33.3333">
    <properties>
-    <property name="Clase" value="Escaleras principe p1"/>
+    <property name="Clase" value="Escaleras principe p2"/>
    </properties>
   </object>
   <object id="4" x="1280" y="1502" width="29.3333" height="33.3333">
    <properties>
-    <property name="Clase" value="Escaleras principe p1"/>
+    <property name="Clase" value="Escaleras principe p2"/>
    </properties>
   </object>
   <object id="5" x="1280" y="1570" width="29.3333" height="33.3333">
    <properties>
-    <property name="Clase" value="Escaleras principe p1"/>
+    <property name="Clase" value="Escaleras principe p2"/>
    </properties>
   </object>
   <object id="6" x="1184" y="1567.33" width="29.3333" height="33.3333">
    <properties>
-    <property name="Clase" value="Escaleras principe p1"/>
+    <property name="Clase" value="Escaleras principe p2"/>
    </properties>
   </object>
  </objectgroup>
