@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" renderorder="left-up" width="50" height="50" tilewidth="32" tileheight="32" nextobjectid="7">
  <tileset firstgid="1" name="rpg_maker_vx_rtp_tileset_by_telles0808" tilewidth="32" tileheight="32" tilecount="2016" columns="32">
-  <image source="../../Tilesets/rpg_maker_vx_rtp_tileset_by_telles0808.png" width="1024" height="2016"/>
+  <image source="../TVproyecto/Tilesets/rpg_maker_vx_rtp_tileset_by_telles0808.png" width="1024" height="2016"/>
  </tileset>
  <layer name="Bloqueo" width="50" height="50">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAC+VWWwrEIAwsvf+hl/0QRGwySSbR2oGC2zynm4fXpePe/EGxOk82j/73qrOXQ2+fnSNyZv0Xu+CrPJrNbmD0hyfmeH7qAa/fDP3RxsoDiad928iMrtwLWTxW7DiNhwfMuebh4alNxG8EnrqK7nrJT2V/sHis4pIBqUa1+pV00XgsVPJgzpWVOIXHH+j+0OZBtE+jsPKomD1WaD4tOWg6mbxO4dH8S3lV4CQejLuDJK+AVIsRe03GhjWOhfMpPDz+vcicu1V7WMsjav8mHs2H5r/iiQLdz0hvof13D+eK/mDFGn33fi3+pTsPEi8D7LuiFEPSYaDynjjrA0YvM/8LT11l8LDu6JkfTYbMpVleyPde2R/WmNl11XxpsgoeES7supLiaDm8hcdX6kqKj7zfua5QHkhdzXTe1Oe9DvLOE6eqP57kGXWlyRE9K6rrKiqX7Kz6Xh4WnYYfQuixThAnAAA=
+   H4sIAAAAAAAAC+VWWwrEIAwsvf+hl/0QRGwySSax2oGCrXlNzcPr0nG//EGxOk42j/591drLodfPjhFZs87iLfgqj6bzNjDqw+NzXD/VgNduhvyoY+WB+NP+baRHV86FLB4rZpzGwwNmX/Pw8OQmYjcCT15FZ71kp7I+WDxWccmAlKNa/kqyqD8WKnkw+8pKnMLjD3R+aP0gWqdRWHlU9B4rNJuWGDSZTF6n8Gj2pbgqcBIPxt1B2q+AlIsRfW2PDasfC+dTeHjse5HZd6vmsBZHVH8nHs2GZr/iiQKdz0htofV3D+uK+mD5Gm33di32pTsP4i8D7Lui5EOSYaDynjirA0YtM8/Ck1cZPKwzemZH20P60iwu5H+vrA+rz+y8ara0vQoeES7svJL8aDHswuMreSX5R76/Oa9QHkhezWR2qvNeBvnm8VNVH0/7GXmF6KJyKHbMqyc9hh+EB3Ieo/4P75I1BhAnAAA=
   </data>
  </layer>
  <layer name="Base" width="50" height="50">
@@ -15,7 +15,7 @@
  </layer>
  <layer name="Paredes" width="50" height="50">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAC+1YW04DMQyMRMthuAlH4avcCO7DPfjpJWClBizLj/iVzUJHsrTdtJudeMZxemmtXe5xuPh4bD/Y8xqGh8cVPG/PaxgeHqvBm4/V8Fd4eHX1dPbPSfmW87IFM/Lx+fB7TfmW8/KGkTUb0RWub6PrlV3rJYzoCtc3vF4UvL7T1lNChae9vtPWczaPkedm6grn3+sFjM3Xe/rD4wUO2Ty0upWhIQo4l9Ie8Wz4LocqHjiX0h7xYvguBeyPowL748iQeHA6rag5UUjzUDqN1NSt5vTIhOaP7NpZlSvNH0fhgd8VoqLX24NHRa8nhbcHam0tf1D73Wg9kPyxsq5wH9OEZ83WlQW4j5F44LGVeGBI/pitq4jPJX/M1lXkrNMazwOPrawriQd15sWA/0tRn7l7VM8ZgeQP6sybhf4sOP+oP6g9xdJfVQDOX+WPWWfFan9Iucqqq3CtIrD0V1EelG6uij8q+isvj9dbcOjjVf7I0lV/T05XGs8oD2nMw4PTlcRzFJb+KsqDQ4auLP1VlMd/0RUF6rzE3V9FV1S+qPMSdd/SX0V5aLqq8gecC2OWrizQeFDzV+iKw9vpe/wW7yc/D+03WbqS9o/Og4O3p63QFeePkXxgf3wB7IvMkBAnAAA=
+   H4sIAAAAAAAAC+1YW04DMQyMRMthuAlH4avcCO7DPfjpJWClBizLj/iVzUJHsrTdtJudeMZxemmtXe5xuPh4bD/Y8xqGh8cVPG/PaxgeHqvBm4/V8Fd4eHX1dPbPSfmW87IFM/Lx+fB7TfmW8/KGkTUb0RWub6PrlV3rJYzoCtc3vF4UvL7T1lNChae9vtPWczaPkedm6grn3+sFjM3Xe/rD4wUO2Ty0upWhIQo4l9Ie8Wz4LocqHjiX0h7xYvguBeyPowL748iQeHA6rag5UUjzUDqN1NSt5vTIhOaP7NpZlSvNH0fhgd8VoqLX24NHRa8nhbcHam0tf1D73Wg9kPyxsq5wH9OEZ83WlQW4j5F44LGVeGBI/pitq4jPJX/M1lXkrNMazwOPrawriQd15sWA/0tRn7l7VM8ZgeQP6sybhf4sOP+oP6g9xdJfVQDOX+WPWWfFan9Iucqqq3CtIrD0V1EelG6uij8q+isvj9dbcOjjVf7I0lV/T05XGs8oD2nMw4PTlcRzFJb+KsqDQ4auLP1VlMd/0RUF6rzE3V9FV1S+qPMSdd/SX0V5aLqq8gecC2OWrizQeFDzV+iKw/vpe/wWbyc/D+03WbqS9o/Og4O3p63QFeePkXxgf3wBw7+bQBAnAAA=
   </data>
  </layer>
  <objectgroup name="Eventos">

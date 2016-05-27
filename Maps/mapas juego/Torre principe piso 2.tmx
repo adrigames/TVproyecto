@@ -8,7 +8,7 @@
  </tileset>
  <layer name="Bloqueo" width="50" height="50">
   <data encoding="base64" compression="zlib">
-   eJztVksOxSAINO/+h37p1lRlPlhjmKSLKiIjKNNaoVAoFAqFBz/DdwLUOIqHF6M4orV0Eo8+llXd38oj60N5IOOrOQdYHko+MsD4Z3lk1hHLAxmf+VFq3cEDzUcGFB6j8/pCf6g8VnM7eKj3A+0RWcjksbJ18Jq9V+wbge7pyJEao9r7+7vDItqn2PnI/oqvaE5Xdv1c5pmO1kT3ndk631I1H4qt8x1VeKj2bh2m8IiuVfQTskcUrG7coQMRf8zdnPFww3Fv0TVZvRjhgdj36958ucDcVwcPBg6NwOg/pK5cPTFi4+wfJ9SV6p/tC866QuIY2bJ9EP0f+byprrL0laOfZPcPdk8UN/D4uq5cfHboq9m4W/dGbBwaMeor0iuY82BrRNGlSDzIObtyot7zt3y0pvGY+Rnx+AOOdAM5
+   eJztVu0OwyAIbPb+D73srxnCfWCbhkuabIroCXhc12AwGAwGgx8+hu8JUM8xPLyIzlHNpSfxWM+S5f1beXR9KA9kPJtzgOWhxKMDjH+WR2cesTyQ8Z0fJdcdPNB4dEDhEd3XHf2HyiObO8FDrQ9UI7rQySOzdfDavVfsG4Hu6YiRekZV+9faYVHVKXa+sr/iqxrTzG6d67zTaE11352t8y1V46HYOt9RhYdq7+7DFB7VtUr/hOxRBds3nugDEX9Mbe54uOGoW3RNlxYjPBD7dd0/Xy4w9ergwcDRIzD9H5JXLk2s2Dj14wl5pfpndcGZV8g5IltWB9H/kc835VVXf+XQk279YPdE8QYed+eVi8+J/mo37u57KzaOHrHqK9OK9beqg1mOKH0pAuSeXTFR6zy6O4XHzk/E4wt+/AMt
   </data>
  </layer>
  <layer name="Base" width="50" height="50">
@@ -18,7 +18,7 @@
  </layer>
  <layer name="Paredes y objetos" width="50" height="50">
   <data encoding="base64" compression="zlib">
-   eJztV8ttwzAMFdAm8K3dID13k9y6hk/JntmjFy9REA5RhXUo/mTZhR5AwI4jWk/vUaIvKaVLjx49evTo0eNfhQet5+7l8bUTHtIxreeex+34yAHu98hjIjymnfJYgmVMFFr4aks8LL6q6Ys1fbVFHhZfbZHH3n1Fdchxvj/7PMzXa2hk5UF1yDEeH6/X0MjKg9ODYq96UNTSowSJFt8vch4A/D/qCPdenThPSHJrtKDIx3p14uYhyQ1rme9JVpyNPHCsJH9i8oBmo0MTxGjkIX3/WNjzPb7KYa2PqD1Gi2fes9YH7hlST1v2idLcKSyaaN4NnGv7Kt1z3Qr1aFlHBLdO0ZgK9VirPjTrsYQlz2lqBRCx70b6CqD1FUC673J5LeDqXusriR/yPkiax3Om51zWro8t+EoDTx5ah1xdan0F0PTbHn/SOqT31IsaX0WdH619Vau/8ta5xVdRfXs0tOdgxPnR2lfR/ZVEWwla91cR34SS91nPD6hbT9/O6XQaUrq+zvExzL95z8G34ff6ffj73LoeJZ2QB6JGf4XQ9FcaLOmBXKz1wenxLO8PXJXwRA==
+   eJztV8ttwzAMFdAm8K3dID13k9y6hk/JntmjFy9REA5RhXUo/mTZhR5AwI4jWk/vUaIvKaVLjx49evTo0eNfhQet5+7l8bUTHtIxreeex+34yAHu98hjIjymnfJYgmVMFFr4aks8LL6q6Ys1fbVFHhZfbZHH3n1Fdchxvj/7PMzXa2hk5UF1yDEeH6/X0MjKg9ODYq96UNTSowSJFt8vch4A/D/qCPdenThPSHJrtKDIx3p14uYhyQ1rme9JVpyNPHCsJH9i8oBmo0MTxGjkIX3/WNjzPb7KYa2PqD1Gi2fes9YH7hlST1v2idLcKSyaaN4NnGv7Kt1z3Qr1aFlHBLdO0ZgK9VirPjTrsYQlz2lqBRCx70b6CqD1FUC673J5LeDqXusriR/yPkiax3Om51zWro8t+EoDTx5ah1xdan0F0PTbHn/SOqT31IsaX0WdH619Vau/8ta5xVdRfXs0tOdgxPnR2lfR/ZVEWwla91cR34SS91nPD6hbT9/O6fQxpHR9neM0zL95z8H34ff6bfj73LoeJZ2QB6JGf4XQ9FcaLOmBXKz1wenxLO8PXMXwRA==
   </data>
  </layer>
  <objectgroup name="Eventos">
