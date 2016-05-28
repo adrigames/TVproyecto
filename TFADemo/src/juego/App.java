@@ -8,11 +8,9 @@ package juego;
 import estados.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import org.newdawn.slick.GameContainer;
-import org.newdawn.slick.SlickException;
-import org.newdawn.slick.state.StateBasedGame;
+import org.newdawn.slick.*;
+import org.newdawn.slick.state.*;
 import mapa.Mapa;
-import org.newdawn.slick.AppGameContainer;
 
 /**
  *
@@ -47,10 +45,13 @@ public class App extends StateBasedGame {
     @Override
     public void initStatesList(GameContainer gc) throws SlickException {
         
-        this.addState(new Intro());             //ID 0
-        this.addState(new MenuPrincipal());     //ID 1
-        this.addState(new Juego());             //ID 2
-        this.addState(new Controles());         //ID 3
+        this.addState(new Intro());                 //ID 0
+        this.addState(new MenuPrincipal());         //ID 1
+        this.addState(new Juego());                 //ID 2
+        this.addState(new ControlesPrincipal());    //ID 3
+        this.addState(new Pausa());                 //ID 4
+        this.addState(new ControlesPausa());        //ID 5
+        this.addState(new GameOver());              //ID 6
        
     }
     

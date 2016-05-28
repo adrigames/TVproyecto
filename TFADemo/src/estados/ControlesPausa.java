@@ -3,13 +3,13 @@ package estados;
 import org.newdawn.slick.*;
 import org.newdawn.slick.state.*;
 
-public class Controles extends BasicGameState{
+public class ControlesPausa extends BasicGameState{
     
     private Image fondo;
 
     @Override
     public int getID() {
-        return 3;
+        return 5;
     }
 
     @Override
@@ -26,10 +26,7 @@ public class Controles extends BasicGameState{
     public void update(GameContainer gc, StateBasedGame sbg, int i) throws SlickException {
         Input entrada = gc.getInput();
         if(entrada.isKeyPressed(Input.KEY_ESCAPE)){
-            sbg.enterState(1);
+            sbg.enterState(4);  //Al menú de pausa
         }
     }
-    
-    
-    
 }

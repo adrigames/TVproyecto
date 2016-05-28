@@ -61,13 +61,13 @@ public class MenuPrincipal extends BasicGameState{
             switch(indicador){
                 
                 case 0:
-                    sbg.enterState(2);
+                    sbg.enterState(2);  //Al Juego principal
                     break;
                 case 1:
-                    sbg.enterState(3);
+                    sbg.enterState(3);  //A los controles
                     break;
                 case 2:
-                    System.exit(0);
+                    System.exit(0);     //Salida
                     break;
             }
             

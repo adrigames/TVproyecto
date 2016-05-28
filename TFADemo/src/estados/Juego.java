@@ -5,12 +5,8 @@ package estados;
  * EN CUANTO ESTÉ EL JUEGO CASI TERMINADO, SE MODIFICA EN FUNCIÓN A LO QUE TENEMOS
  */
 
-import org.newdawn.slick.GameContainer;
-import org.newdawn.slick.Graphics;
-import org.newdawn.slick.Image;
-import org.newdawn.slick.SlickException;
-import org.newdawn.slick.state.BasicGameState;
-import org.newdawn.slick.state.StateBasedGame;
+import org.newdawn.slick.*;
+import org.newdawn.slick.state.*;
 
 public class Juego extends BasicGameState{
     
@@ -52,6 +48,13 @@ public class Juego extends BasicGameState{
     @Override
     public void update(GameContainer container, StateBasedGame game, int delta) throws SlickException {
         
+        Input entrada = container.getInput();
+        if (entrada.isKeyPressed(Input.KEY_P)) {
+            game.enterState(4);     //Al menú de pausa
+        }
+        if(entrada.isKeyPressed(Input.KEY_ESCAPE)){
+            game.enterState(6);     //Al menú de final de partida
+        }
     }
     
 }

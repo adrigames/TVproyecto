@@ -1,48 +1,67 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package estados;
 
-import org.newdawn.slick.GameContainer;
-import org.newdawn.slick.Graphics;
-import org.newdawn.slick.Image;
-import org.newdawn.slick.SlickException;
-import org.newdawn.slick.state.BasicGameState;
-import org.newdawn.slick.state.StateBasedGame;
+import org.newdawn.slick.*;
+import org.newdawn.slick.state.*;
 
-/**
- *
- * @author Sergio
- */
 public class GameOver extends BasicGameState {
-    private Image fondo;
-    private final String[] opcionesMenu = {"Volver a jugar","Controles","Salir"};
-    private int seleccion;
-
-    public GameOver(int i) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    
+    private Image fondo, aux;
+    private Font font;
+    private final String[] opciones = new String[]{"Menú Principal", "Salir"};
+    private int indicador;
 
     @Override
     public int getID() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return 6;
     }
 
     @Override
     public void init(GameContainer gc, StateBasedGame sbg) throws SlickException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        fondo = new Image("testdata/GameOver.png");
+        aux = fondo.getScaledCopy(800, 600);
+        font = new AngelCodeFont("testdata/demo2.fnt", "testdata/demo2_00.tga");
+        indicador = 0;
     }
 
     @Override
-    public void render(GameContainer gc, StateBasedGame sbg, Graphics grphcs) throws SlickException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void render(GameContainer gc, StateBasedGame sbg, Graphics g) throws SlickException {
+        aux.draw();
+        g.setFont(font);
+        g.setColor(Color.yellow);
+        
+        for (int i = 0; i < opciones.length; i++) {
+            g.drawString(opciones[i], 400 - (font.getWidth(opciones[i]) / 2), 200 + (i * 50));
+            if (indicador == i) {
+                g.drawRect(200, 190 + (i * 50), 400, 50);
+            }
+        }
     }
 
     @Override
     public void update(GameContainer gc, StateBasedGame sbg, int i) throws SlickException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
+        Input entrada = gc.getInput();
+        if(entrada.isKeyPressed(Input.KEY_UP)){
+            indicador--;
+            if(indicador < 0) indicador = opciones.length - 1;
+        }
+        if(entrada.isKeyPressed(Input.KEY_DOWN)){
+            indicador++;
+            if(indicador >= opciones.length) indicador  = 0;
+        }
+        if (gc.getInput().isKeyPressed(Input.KEY_ENTER)) {
+        
+            switch(indicador){
+                
+                case 0:
+                    sbg.enterState(1);  //Al menú principal
+                    break;
+                case 1:
+                    System.exit(0);     //Salida
+                    break;
+            }
+            
+        }
     }
     
 }
