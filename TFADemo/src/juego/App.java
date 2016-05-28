@@ -6,6 +6,8 @@
 package juego;
 
 import estados.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.SlickException;
 import org.newdawn.slick.state.StateBasedGame;
@@ -17,37 +19,38 @@ import org.newdawn.slick.AppGameContainer;
  * @author Adrian de Juan
  */
 public class App extends StateBasedGame {
+    
+    private AppGameContainer contenedor;
     private Mapa mapa;
-    public static final String name = "RPG";
     //dimensiones de la pantalla
     
     public static final int ALTO=500,ANCHO=800;
     
     //Estados
     
-    public App() {
-        super(name);
+    public App() throws SlickException {
+        super("RPG");
+        contenedor = new AppGameContainer(new App());
+        contenedor.setDisplayMode(1200, 600, false);
+        contenedor.setShowFPS(false);
+        contenedor.start();
     }
     
     public static void main(String[] args) {
         try {
-            AppGameContainer app;
-            app = new AppGameContainer(new App());
-            app.setDisplayMode(1200, 600, false);
-            app.setShowFPS(false);
-            app.start();
-        }catch (SlickException e){
-            e.printStackTrace();
+            new App();
+        } catch (SlickException ex) {
+            Logger.getLogger(App.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
     @Override
     public void initStatesList(GameContainer gc) throws SlickException {
-       this.addState(new Intro(0));//Intro
-       this.addState(new MenuPrincipal(1));//Menú
-       this.addState(new Juego(2));//Juego
-       this.addState(new Pausa(3));//Pausa
-       this.addState(new GameOver(4));//Game over
+        
+        this.addState(new Intro());             //ID 0
+        this.addState(new MenuPrincipal());     //ID 1
+        this.addState(new Juego());             //ID 2
+        this.addState(new Controles());         //ID 3
        
     }
     

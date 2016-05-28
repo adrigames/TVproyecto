@@ -5,164 +5,75 @@
  */
 package estados;
 
-import org.newdawn.slick.GameContainer;
-import org.newdawn.slick.Graphics;
-import org.newdawn.slick.Image;
-import org.newdawn.slick.Input;
-import org.newdawn.slick.Sound;
-import org.newdawn.slick.SlickException;
-import org.newdawn.slick.state.StateBasedGame;
+import org.newdawn.slick.*;
+import org.newdawn.slick.state.*;
 
-/**
- *
- * @author Adrian de Juan
- */
-public class MenuPrincipal extends Estado {
-    private Image menu;
-    private final String[] opcionesMenu = {"Jugar","Controles","Salir"};
+public class MenuPrincipal extends BasicGameState{
     
-    public MenuPrincipal(int id){
-        super(id);
-    }
+    private Image fondo;
+    private Font font;
+    private final String[] opciones = new String[]{"Iniciar Juego", "Controles", "Salir"};
+    private int indicador;
 
     @Override
     public int getID() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return 1;
     }
 
     @Override
     public void init(GameContainer gc, StateBasedGame sbg) throws SlickException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        fondo = new Image("testdata/ImagenMenu.png");
+        font = new AngelCodeFont("testdata/demo2.fnt", "testdata/demo2_00.tga");
+        indicador = 0;
     }
 
     @Override
-    public void render(GameContainer gc, StateBasedGame sbg, Graphics grphcs) throws SlickException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void render(GameContainer gc, StateBasedGame sbg, Graphics g) throws SlickException {
+        fondo.draw();
+        g.setFont(font);
+        g.setColor(Color.yellow);
+        
+        for (int i = 0; i < opciones.length; i++) {
+            g.drawString(opciones[i], 400 - (font.getWidth(opciones[i]) / 2), 200 + (i * 50));
+            if (indicador == i) {
+                g.drawRect(200, 190 + (i * 50), 400, 50);
+            }
+        }
     }
 
     @Override
     public void update(GameContainer gc, StateBasedGame sbg, int i) throws SlickException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
+        Input entrada = gc.getInput();
+        if(entrada.isKeyPressed(Input.KEY_UP)){
+            indicador--;
+            if(indicador < 0) indicador = opciones.length - 1;
+        }
+        if(entrada.isKeyPressed(Input.KEY_DOWN)){
+            indicador++;
+            if(indicador >= opciones.length) indicador  = 0;
+        }
+        if (gc.getInput().isKeyPressed(Input.KEY_ESCAPE)) {
+            System.exit(0);
+        }
+        if (gc.getInput().isKeyPressed(Input.KEY_ENTER)) {
+        
+            switch(indicador){
+                
+                case 0:
+                    sbg.enterState(2);
+                    break;
+                case 1:
+                    sbg.enterState(3);
+                    break;
+                case 2:
+                    System.exit(0);
+                    break;
+            }
+            
+        }
+        
     }
-
-    @Override
-    public void enter(GameContainer gc, StateBasedGame sbg) throws SlickException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public void leave(GameContainer gc, StateBasedGame sbg) throws SlickException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public void mouseWheelMoved(int i) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public void mouseClicked(int i, int i1, int i2, int i3) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public void mousePressed(int i, int i1, int i2) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public void mouseReleased(int i, int i1, int i2) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public void mouseMoved(int i, int i1, int i2, int i3) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public void mouseDragged(int i, int i1, int i2, int i3) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public void setInput(Input input) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public boolean isAcceptingInput() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public void inputEnded() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public void inputStarted() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public void keyPressed(int i, char c) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public void keyReleased(int i, char c) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public void controllerLeftPressed(int i) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public void controllerLeftReleased(int i) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public void controllerRightPressed(int i) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public void controllerRightReleased(int i) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public void controllerUpPressed(int i) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public void controllerUpReleased(int i) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public void controllerDownPressed(int i) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public void controllerDownReleased(int i) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public void controllerButtonPressed(int i, int i1) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public void controllerButtonReleased(int i, int i1) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    
     
 }
