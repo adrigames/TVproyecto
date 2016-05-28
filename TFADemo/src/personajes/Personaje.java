@@ -5,33 +5,33 @@
  */
 package personajes;
 
+import logica.Collidable;
 import org.newdawn.slick.Animation;
+import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.SpriteSheet;
+import org.newdawn.slick.geom.Rectangle;
 
 /**
  *
  * @author Sergio
  */
-public abstract class Personaje {
-    private SpriteSheet sprite;
-    private float jugadorX, jugadorY;
-    private Animation jugador, up, down, left, right;
+public abstract class Personaje implements Collidable{
+    protected SpriteSheet sprite;
+    protected GameContainer container;
+    protected float jugadorX, jugadorY;
+    protected Animation jugador, up, down, left, right;
+    protected Rectangle rect;
+    protected float vida;
+    protected float daño;
 
-    public Personaje(SpriteSheet sprite, float jugadorX, float jugadorY, Animation jugador, Animation up, Animation down, Animation left, Animation right) {
-        this.sprite = sprite;
+    public Personaje(GameContainer container, float jugadorX, float jugadorY, float vida, float daño) {
+        this.container = container;
         this.jugadorX = jugadorX;
         this.jugadorY = jugadorY;
-        this.jugador = jugador;
-        this.up = up;
-        this.down = down;
-        this.left = left;
-        this.right = right;
+        this.vida = vida;
+        this.daño = daño;
     }
-
-    public SpriteSheet getSprite() {
-        return sprite;
-    }
-
+    
     public float getJugadorX() {
         return jugadorX;
     }
@@ -43,25 +43,6 @@ public abstract class Personaje {
     public Animation getJugador() {
         return jugador;
     }
-
-    public Animation getUp() {
-        return up;
-    }
-
-    public Animation getDown() {
-        return down;
-    }
-
-    public Animation getLeft() {
-        return left;
-    }
-
-    public Animation getRight() {
-        return right;
-    }
-    
-    
-    abstract public void movement();
     
     abstract public void action();  
 }
