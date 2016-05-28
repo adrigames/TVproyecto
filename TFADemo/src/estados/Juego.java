@@ -27,7 +27,7 @@ public class Juego extends BasicGameState{
     @Override
     public void init(GameContainer container, StateBasedGame game) throws SlickException {
         
-        sprite = new Image("res/MHU.png");
+        sprite = new Image("testdata/ImagenMenu.png");
         
     }
 
