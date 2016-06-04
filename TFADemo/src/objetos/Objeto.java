@@ -10,6 +10,7 @@ import logica.GestorColisiones;
 import org.newdawn.slick.Animation;
 import org.newdawn.slick.SpriteSheet;
 import org.newdawn.slick.geom.Rectangle;
+import org.newdawn.slick.geom.Shape;
 
 /**
  *
@@ -17,11 +18,39 @@ import org.newdawn.slick.geom.Rectangle;
  */
 
 public abstract class Objeto implements Collidable {
-    protected float posX, posY;
-    protected GestorColisiones gestor;   
-    protected SpriteSheet spriteObj;
-    protected Animation animationObj;
-    protected Rectangle areaColision;
+    private float posX, posY;
+    private GestorColisiones gestor;   
+    private SpriteSheet spriteObj;
+    private Animation animationObj;
+    private Rectangle areaColision;
+
+    public GestorColisiones getGestor() {
+        return gestor;
+    }
+
+    public void setGestor(GestorColisiones gestor) {
+        this.gestor = gestor;
+    }
+
+    public SpriteSheet getSpriteObj() {
+        return spriteObj;
+    }
+
+    public void setSpriteObj(SpriteSheet spriteObj) {
+        this.spriteObj = spriteObj;
+    }
+
+    public Animation getAnimationObj() {
+        return animationObj;
+    }
+
+    public void setAnimationObj(Animation animationObj) {
+        this.animationObj = animationObj;
+    }
+
+    public void setAreaColision(Rectangle areaColision) {
+        this.areaColision = areaColision;
+    }
 
     public Objeto(float posX, float posY, GestorColisiones gestor) {
         this.posX = posX;
@@ -53,4 +82,8 @@ public abstract class Objeto implements Collidable {
     public void update(int delta){
         sincronizarArea();
     }
+    
+    
+    @Override
+    abstract public Shape getAreaColision();
 }

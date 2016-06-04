@@ -38,9 +38,9 @@ public class Heroe extends Personaje {
     }
     //Esta función iría en el update 
     public void movement(int delta) {
-    float jugadorAnteriorX = jugadorX; float jugadorAnteriorY = jugadorY;
-        
-    Input input = container.getInput();
+        float jugadorAnteriorX = jugadorX; float jugadorAnteriorY = jugadorY;
+
+        Input input = container.getInput();
         if (input.isKeyDown(Input.KEY_UP)) {
                  jugador = up;
                  jugador.update(delta);
@@ -70,7 +70,7 @@ public class Heroe extends Personaje {
                 jugadorX = jugadorAnteriorX;
                 jugadorY = jugadorAnteriorY;
                 }*/
-        }
+    }
 
     @Override
     public void action() {
@@ -87,6 +87,7 @@ public class Heroe extends Personaje {
         return areaColision;    
     }
 
+    //Las interacciones de los objetos con el personaje van aquí.
     @Override
     public void alColisionar(Collidable colision) {
         if(colision.getClass().getSimpleName().equals("Puerta")){

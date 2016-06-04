@@ -7,8 +7,10 @@ package objetos;
 
 import logica.Collidable;
 import logica.GestorColisiones;
+import org.newdawn.slick.Input;
 import org.newdawn.slick.geom.Rectangle;
 import org.newdawn.slick.geom.Shape;
+import org.newdawn.slick.GameContainer;
 
 /**
  *
@@ -22,9 +24,10 @@ public class Puerta extends Objeto {
         gestor.recordItem(this);
     }
 
+    
     @Override
     public Shape getAreaColision() {
-        return areaColision;
+        return this.getAreaColision();
     }
 
     @Override
@@ -34,8 +37,8 @@ public class Puerta extends Objeto {
 
     @Override
     public void sincronizarArea() {
-        areaColision.setX(posX);
-        areaColision.setY(posY);
+        this.getAreaColision().setX(this.getPosX());
+        this.getAreaColision().setY(this.getPosY());
 
     }
     
