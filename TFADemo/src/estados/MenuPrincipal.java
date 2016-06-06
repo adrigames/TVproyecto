@@ -14,7 +14,6 @@ public class MenuPrincipal extends BasicGameState{
     private Font font;
     private final String[] opciones = new String[]{"Iniciar Juego", "Controles", "Salir"};
     private int indicador;
-    private Sound sonidoMenu;
 
     @Override
     public int getID() {
@@ -25,7 +24,6 @@ public class MenuPrincipal extends BasicGameState{
     public void init(GameContainer gc, StateBasedGame sbg) throws SlickException {
         fondo = new Image("testdata/ImagenMenu.png");
         font = new AngelCodeFont("testdata/demo2.fnt", "testdata/demo2_00.tga");
-        sonidoMenu = new Sound("testdata/sonidoMenu.ogg");
         indicador = 0;
     }
 
@@ -49,12 +47,10 @@ public class MenuPrincipal extends BasicGameState{
         Input entrada = gc.getInput();
         if(entrada.isKeyPressed(Input.KEY_UP)){
             indicador--;
-            sonidoMenu.play();
             if(indicador < 0) indicador = opciones.length - 1;
         }
         if(entrada.isKeyPressed(Input.KEY_DOWN)){
             indicador++;
-            sonidoMenu.play();
             if(indicador >= opciones.length) indicador  = 0;
         }
         if (gc.getInput().isKeyPressed(Input.KEY_ESCAPE)) {
