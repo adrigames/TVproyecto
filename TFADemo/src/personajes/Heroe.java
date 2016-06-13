@@ -8,29 +8,43 @@ package personajes;
 import java.util.ArrayList;
 import logica.Collidable;
 import objetos.Puerta;
-import org.newdawn.slick.Animation;
-import org.newdawn.slick.GameContainer;
-import org.newdawn.slick.Input;
-import org.newdawn.slick.SpriteSheet;
-import org.newdawn.slick.geom.Shape;
+import org.newdawn.slick.*;
+import org.newdawn.slick.geom.*;
+import org.newdawn.slick.state.*;
 
-/**
- *
- * @author Sergio
- */
 public class Heroe extends Personaje {
     private Animation ataque;
     private ArrayList inventario;
     private boolean cambioDeMapa;
     private Puerta puerta;
     private Shape areaColision;
+    private boolean arriba, abajo, izquierda, derecha, defecto = true;
+    private int delta;
+    
+    private SpriteSheet prota;
 
-    public Heroe(GameContainer container, float jugadorX, float jugadorY, float vida, float daño) {
+    public Heroe(GameContainer container, float jugadorX, float jugadorY, float vida, float daño) throws SlickException {
         super(container, jugadorX, jugadorY, vida, daño);
-        down = new Animation(sprite,0,0,2,0,true,150,false);
-        left = new Animation(sprite,0,1,2,1,true,150, false);
-        right = new Animation(sprite,0,2,2,2,true,150, false);
-        up = new Animation(sprite,0,3,2,3,true,150,false);
+        this.prota = new SpriteSheet("testdata/animaciones/protagonista.png", 64, 64);
+        down = new Animation(/*prota,0,0,2,0,true,150,false*/);
+        left = new Animation(/*prota,0,1,2,1,true,150, false*/);
+        right = new Animation(/*prota,0,2,2,2,true,150, false*/);
+        up = new Animation(/*prota,0,3,2,3,true,150,false*/);
+        for (int i = 0; i < 9; i++) { 
+            down.addFrame(prota.getSprite(i, 10), 100);
+        }
+
+        for (int i = 0; i < 9; i++) {
+            left.addFrame(prota.getSprite(i, 9), 100);
+        }
+
+        for (int i = 0; i < 9; i++) {
+            right.addFrame(prota.getSprite(i, 11), 100);
+        }
+
+        for (int i = 0; i < 9; i++) {
+            up.addFrame(prota.getSprite(i, 8), 100);
+        }
     }
 
     public boolean getCambioDeMapa(){
@@ -42,22 +56,26 @@ public class Heroe extends Personaje {
 
         Input input = container.getInput();
         if (input.isKeyDown(Input.KEY_UP)) {
+            arriba = true;
                  jugador = up;
                  jugador.update(delta);
                  jugadorY -= delta * 0.1f;
             }
         else if (input.isKeyDown(Input.KEY_DOWN)){
+            abajo = true;
             jugador = down;
             jugador.update(delta);
             jugadorY += delta * 0.1f;
         }
         else if (input.isKeyDown(Input.KEY_LEFT)){
+            izquierda = true;
             jugador = left;
             jugador.update(delta);
             jugadorX -= delta * 0.1f;
         }
         else if (input.isKeyDown(Input.KEY_RIGHT))
         {
+            derecha = true;
             jugador = right;
             jugador.update(delta);
             jugadorX += delta * 0.1f;
@@ -103,5 +121,22 @@ public class Heroe extends Personaje {
     public void sincronizarArea() {
         areaColision.setX(jugadorX);
         areaColision.setY(jugadorY);    
-    } 
+    }
+    
+    @Override
+    public void render(int delta, Graphics g) throws SlickException{
+        
+        this.delta = delta;
+        if(arriba) up.draw();
+        else if(abajo) down.draw();
+        else if(izquierda) left.draw();
+        else if(derecha) right.draw();
+        else if(defecto) up.draw();
+        
+    }
+    
+    public void dibujar(Graphics g) throws SlickException{
+        this.render(delta, g);
+    }
+    
 }

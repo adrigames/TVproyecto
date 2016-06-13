@@ -7,10 +7,12 @@ package estados;
 
 import org.newdawn.slick.*;
 import org.newdawn.slick.state.*;
+import personajes.*;
 
 public class Juego extends BasicGameState{
     
     private Image sprite;
+    private Heroe prota;
 
     @Override
     public int getID() {
@@ -32,21 +34,17 @@ public class Juego extends BasicGameState{
      */
     @Override
     public void render(GameContainer container, StateBasedGame game, Graphics g) throws SlickException {
-        
-        g.drawString("Hola, Slick", 100, 200);
-        g.drawLine(50, 60, 100, 90);
-        g.fillRect(250, 100, 100, 20);
-        g.fillOval(60, 90, 100, 100);
-        
-        sprite.draw(300, 250);
+                
+        this.prota.dibujar(g);
         
     }
 
     /**
-     * Actualiza 
+     * Actualiza
      */
     @Override
     public void update(GameContainer container, StateBasedGame game, int delta) throws SlickException {
+        //this.prota.update(/*delta*/);
         
         Input entrada = container.getInput();
         if (entrada.isKeyPressed(Input.KEY_P)) {
@@ -55,6 +53,7 @@ public class Juego extends BasicGameState{
         if(entrada.isKeyPressed(Input.KEY_ESCAPE)){
             game.enterState(6);     //Al menú de final de partida
         }
+        
     }
     
 }
