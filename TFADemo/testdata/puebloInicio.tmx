@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="25" height="25" tilewidth="32" tileheight="32" nextobjectid="20">
+ <tileset firstgid="1" name="trees barrels wooden things" tilewidth="32" tileheight="32" tilecount="256" columns="16">
+  <image source="../../../../Documents/GitHub/TVproyecto/Tilesets/trees barrels wooden things.png" width="512" height="512"/>
+ </tileset>
+ <tileset firstgid="257" name="rpg_maker_vx_rtp_tileset_by_telles0808" tilewidth="32" tileheight="32" tilecount="2016" columns="32">
+  <image source="../../../../Documents/GitHub/TVproyecto/Tilesets/rpg_maker_vx_rtp_tileset_by_telles0808.png" width="1024" height="2016"/>
+ </tileset>
+ <tileset firstgid="2273" name="vx-buildingstileset" tilewidth="32" tileheight="32" tilecount="256" columns="16">
+  <image source="../../../../Documents/GitHub/TVproyecto/Tilesets/vx-buildingstileset.png" width="512" height="512"/>
+ </tileset>
+ <layer name="Bloqueo" width="25" height="25">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC82UUQ6AMAhD0fsf2q8lZmGltNOsiVER+jZFIiLuKz9msXkjF927MZfxjqP9qIw5Pq5dxnxmhfab7R19W4aBcrq+WT3yQP37pVx/pd59n6cwMh4zZxz/LK7UofwdjKrXUQz96+xaGEZnfStGNY9UBiuW4fTjSYzVc3aOqx4dhtq7yHOH/pyHlR6G8huLxAkAAA==
+  </data>
+ </layer>
+ <layer name="Capa base" width="25" height="25">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC+3DAQkAAAwDoD3e+hdajoOCvaSqqr46EMmeLsQJAAA=
+  </data>
+ </layer>
+ <layer name="Capa de suelo" width="25" height="25">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC7WUMQrDMAxFTYf4MKWX6JIO7dCp3UtIbtDsgZy7MkHgBkf+ku0PIoMlP+tHtnN6XU9bSOopRorJsD/KeFF8KeZKjL5z7tb959TuY6T9px1D08fqt+/HHzNSivtYvZwbNNAZFyXjqI+4NuWxhsGct1Cb8ljLsNSyr1ZGqEdrOU/yM1eL5kl+5mrRsMjKQOY/pRqzm1PK69K50ihmnIl7MXqFMu60/6MxQ7OGiOeg1VwH8Ry0ZLDQ91mj/R1D3+cSIX5Idx+ZGY5n4Rlr/tcfBWfQ4cQJAAA=
+  </data>
+ </layer>
+ <layer name="Capa de casas" width="25" height="25">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC2NgYGC4zMjAcIURk0YHcRwMDPFoGCRGDPgMNO8LIyaNDuqwmIdNDBsQZmJgWMSIikWYMNXNA5oXhWRmNAdEjBhgjMUOEyx2gEAVkpnVRJpPij8oAaT4YxSMAnoCYssjSgCx5RElYDDk49nMDAxzmHHT1PDHbqA5e5hx04PFH4QANfxBCESy4MZRLNSxo5IFN66ikh243E9rf1RR2R/DAQAAq3POhsQJAAA=
+  </data>
+ </layer>
+ <layer name="Capa de detalle casas" width="25" height="25">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC2NgGHzgJBsDwyooPsU20K5BBf7MDAwBzLj51AD5QPMKgHgiJwPDJE4EnxZgIdD8RZy0MXuwgcRBlpZGwSigFPADywUBZtx8agB9oHkGSOURjI8ODrJQbtdwL484WVBpXGKUAE0WVBqXGDXAIaR0QUsw3NMFJQAAPd2MgsQJAAA=
+  </data>
+ </layer>
+ <objectgroup name="Eventos" width="0" height="0">
+  <object id="5" x="96" y="134" width="62" height="57">
+   <properties>
+    <property name="Clase" value="Casa protagonista"/>
+   </properties>
+  </object>
+  <object id="10" x="642" y="485" width="60" height="58">
+   <properties>
+    <property name="Clase" value="Puerta cerrada"/>
+   </properties>
+  </object>
+  <object id="15" x="128" y="671" width="62" height="64">
+   <properties>
+    <property name="Clase" value="Puerta tienda"/>
+   </properties>
+  </object>
+  <object id="17" x="385" y="31" width="121" height="32">
+   <properties>
+    <property name="Clase" value="Puerta camino"/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>

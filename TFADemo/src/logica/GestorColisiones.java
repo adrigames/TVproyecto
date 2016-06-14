@@ -6,6 +6,7 @@
 package logica;
 
 import java.util.ArrayList;
+import mapa.Mapa;
 
 /**
  *
@@ -14,6 +15,7 @@ import java.util.ArrayList;
 public class GestorColisiones {
 
     private ArrayList<Collidable> list;
+    private boolean[][] blocked;
 
     public GestorColisiones() {
         list = new ArrayList<>();
@@ -46,6 +48,15 @@ public class GestorColisiones {
     private void searchCollision(int i, int j) {
         if (list.get(i).getAreaColision().intersects(list.get(j).getAreaColision())) {
             list.get(i).alColisionar(list.get(j));
+        }
+    }
+    
+    public void blockMap(Mapa mapa) {
+        blocked = new boolean[mapa.getMapa().getWidth()][mapa.getMapa().getHeight()];
+        for (int x = 0; x<mapa.getMapa().getWidth(); x++){
+            for (int y = 0; y<mapa.getMapa().getHeight(); y++){
+                blocked[x][y] = (mapa.getMapa().getTileId(x, y, 0)!=0);
+            }
         }
     }
 }

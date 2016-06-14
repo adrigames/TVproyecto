@@ -32,10 +32,9 @@ public class Camara {
     
     
     
-    public Camara(GameContainer container , TiledMap map, Personaje personaje, float zoom){
+    public Camara(GameContainer container , TiledMap map, Personaje personaje){
         this.personaje = personaje;
         this.map = map;
-        this.zoom = zoom;
         distanciaBordeX = 400;
         distanciaBordeY = 300;     
         anchoMapa= map.getWidth()*map.getTileWidth()*zoom;
@@ -59,8 +58,8 @@ public class Camara {
     
     public void moverCamara(){
         
-        x = personaje.getJugadorX()*zoom;
-        y = personaje.getJugadorY()*zoom;
+        x = personaje.getJugadorX();
+        y = personaje.getJugadorY();
    
         if (x >(anchoMapa - anchoVentana + distanciaBordeX)  && y > altoMapa-altoVentana+distanciaBordeY){
             camX = -(anchoMapa - anchoVentana);
@@ -95,14 +94,5 @@ public class Camara {
          
         }
     
-    }
-
-    public void setZoom(float zoom) {
-        this.zoom = zoom;
-        anchoMapa= map.getWidth()*map.getTileWidth()*zoom;
-        altoMapa = map.getHeight()*map.getTileHeight()*zoom;
-        anchoTile = map.getTileHeight()*zoom;
-        x = personaje.getJugadorX()*zoom;
-        y = personaje.getJugadorY()*zoom;
     }
 }

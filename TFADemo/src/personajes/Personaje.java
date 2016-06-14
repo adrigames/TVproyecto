@@ -8,6 +8,8 @@ package personajes;
 import logica.Collidable;
 import org.newdawn.slick.Animation;
 import org.newdawn.slick.GameContainer;
+import org.newdawn.slick.Graphics;
+import org.newdawn.slick.SlickException;
 import org.newdawn.slick.SpriteSheet;
 import org.newdawn.slick.geom.Rectangle;
 
@@ -23,17 +25,27 @@ public abstract class Personaje implements Collidable{
     protected Rectangle rect;
     protected float vida;
     protected float daño;
+    protected int delta;
 
-    public Personaje(GameContainer container, float jugadorX, float jugadorY, float vida, float daño) {
+    public Personaje(GameContainer container) {
         this.container = container;
-        this.jugadorX = jugadorX;
-        this.jugadorY = jugadorY;
-        this.vida = vida;
-        this.daño = daño;
+    }
+    
+    public void update(int delta) throws SlickException{
+        this.delta = delta;
+        action();
     }
     
     public float getJugadorX() {
         return jugadorX;
+    }
+
+    public void setJugadorX(float jugadorX) {
+        this.jugadorX = jugadorX;
+    }
+
+    public void setJugadorY(float jugadorY) {
+        this.jugadorY = jugadorY;
     }
 
     public float getJugadorY() {
@@ -45,6 +57,8 @@ public abstract class Personaje implements Collidable{
     }
     
     abstract public void action();  
+    
+    abstract void render(int delta, Graphics g) throws SlickException;
 }
 
     

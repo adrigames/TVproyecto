@@ -5,12 +5,21 @@ package estados;
  * EN CUANTO ESTÉ EL JUEGO CASI TERMINADO, SE MODIFICA EN FUNCIÓN A LO QUE TENEMOS
  */
 
+import logica.Camara;
+import logica.GestorColisiones;
+import mapa.*;
 import org.newdawn.slick.*;
 import org.newdawn.slick.state.*;
+import personajes.*;
 
 public class Juego extends BasicGameState{
+    private GameContainer container;
+    private StateBasedGame game;
+    private GestorColisiones gestor;
+    private Camara camara;
+    private Mapa mapa;
+    private Heroe prota;
     
-    private Image sprite;
 
     @Override
     public int getID() {
@@ -22,8 +31,13 @@ public class Juego extends BasicGameState{
      */
     @Override
     public void init(GameContainer container, StateBasedGame game) throws SlickException {
-        
-        sprite = new Image("testdata/ImagenMenu.png");
+        this.game = game;
+        this.container = container;
+        gestor = new GestorColisiones();
+        mapa = new PuebloInicio();
+        gestor.blockMap(mapa);
+        prota = new Heroe(container);
+        camara = new Camara(container, mapa.getMapa(), prota);
         
     }
 
@@ -32,22 +46,21 @@ public class Juego extends BasicGameState{
      */
     @Override
     public void render(GameContainer container, StateBasedGame game, Graphics g) throws SlickException {
+        mapa.getMapa().render(0, 0);
+        g.translate(camara.getCamX(),camara.getCamY());
+        prota.getJugador().draw(prota.getJugadorX(),prota.getJugadorY());
         
-        g.drawString("Hola, Slick", 100, 200);
-        g.drawLine(50, 60, 100, 90);
-        g.fillRect(250, 100, 100, 20);
-        g.fillOval(60, 90, 100, 100);
         
-        sprite.draw(300, 250);
         
     }
 
     /**
-     * Actualiza 
+     * Actualiza
      */
     @Override
     public void update(GameContainer container, StateBasedGame game, int delta) throws SlickException {
-        
+        //this.prota.update(/*delta*/);
+        prota.movement(delta);
         Input entrada = container.getInput();
         if (entrada.isKeyPressed(Input.KEY_P)) {
             game.enterState(4);     //Al menú de pausa
@@ -55,6 +68,7 @@ public class Juego extends BasicGameState{
         if(entrada.isKeyPressed(Input.KEY_ESCAPE)){
             game.enterState(6);     //Al menú de final de partida
         }
+        
     }
     
 }

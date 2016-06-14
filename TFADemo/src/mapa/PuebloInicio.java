@@ -5,17 +5,24 @@
  */
 package mapa;
 
+import objetos.Puerta;
+import org.newdawn.slick.SlickException;
 import org.newdawn.slick.tiled.TiledMap;
+import personajes.Heroe;
 
 /**
  *
  * @author Sergio
  */
 public class PuebloInicio extends Mapa {
+    private Heroe heroe;
+    private Puerta salidaPueblo;
     
     
-    public PuebloInicio(TiledMap mapa, boolean[][] blocked, float tileWidth, float tileHeight) {
-        super(mapa, blocked, tileWidth, tileHeight);
+    public PuebloInicio() throws SlickException {
+        mapa = new TiledMap("testdata/puebloInicio.tmx");
+        tileWidth = mapa.getWidth();
+        tileHeight = mapa.getHeight();
     }
     
 }
