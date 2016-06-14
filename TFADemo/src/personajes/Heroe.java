@@ -22,6 +22,7 @@ public class Heroe extends Personaje {
     private int delta;
     
     private SpriteSheet prota;
+<<<<<<< HEAD
 
     public Heroe(GameContainer container) throws SlickException {
         super(container);
@@ -39,6 +40,20 @@ public class Heroe extends Personaje {
             down.addFrame(prota.getSprite(i, 10), 100);
         }
 
+=======
+
+    public Heroe(GameContainer container, float jugadorX, float jugadorY, float vida, float daño) throws SlickException {
+        super(container, jugadorX, jugadorY, vida, daño);
+        this.prota = new SpriteSheet("testdata/animaciones/protagonista.png", 64, 64);
+        down = new Animation(/*prota,0,0,2,0,true,150,false*/);
+        left = new Animation(/*prota,0,1,2,1,true,150, false*/);
+        right = new Animation(/*prota,0,2,2,2,true,150, false*/);
+        up = new Animation(/*prota,0,3,2,3,true,150,false*/);
+        for (int i = 0; i < 9; i++) { 
+            down.addFrame(prota.getSprite(i, 10), 100);
+        }
+
+>>>>>>> origin/master
         for (int i = 0; i < 9; i++) {
             left.addFrame(prota.getSprite(i, 9), 100);
         }
@@ -49,7 +64,11 @@ public class Heroe extends Personaje {
 
         for (int i = 0; i < 9; i++) {
             up.addFrame(prota.getSprite(i, 8), 100);
+<<<<<<< HEAD
         }*/
+=======
+        }
+>>>>>>> origin/master
     }
 
     public boolean getCambioDeMapa(){
@@ -130,8 +149,25 @@ public class Heroe extends Personaje {
     
     @Override
     public void render(int delta, Graphics g) throws SlickException{
+<<<<<<< HEAD
         this.delta = delta;
         
     }
     
+=======
+        
+        this.delta = delta;
+        if(arriba) up.draw();
+        else if(abajo) down.draw();
+        else if(izquierda) left.draw();
+        else if(derecha) right.draw();
+        else if(defecto) up.draw();
+        
+    }
+    
+    public void dibujar(Graphics g) throws SlickException{
+        this.render(delta, g);
+    }
+    
+>>>>>>> origin/master
 }

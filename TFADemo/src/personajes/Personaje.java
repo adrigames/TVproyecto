@@ -36,6 +36,11 @@ public abstract class Personaje implements Collidable{
         action();
     }
     
+    public void update(int delta) throws SlickException{
+        this.delta = delta;
+        action();
+    }
+    
     public float getJugadorX() {
         return jugadorX;
     }

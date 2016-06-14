@@ -20,6 +20,11 @@ public class Juego extends BasicGameState{
     private Mapa mapa;
     private Heroe prota;
     
+<<<<<<< HEAD
+=======
+    private Image sprite;
+    private Heroe prota;
+>>>>>>> origin/master
 
     @Override
     public int getID() {
@@ -46,11 +51,16 @@ public class Juego extends BasicGameState{
      */
     @Override
     public void render(GameContainer container, StateBasedGame game, Graphics g) throws SlickException {
+<<<<<<< HEAD
         mapa.getMapa().render(0, 0);
         g.translate(camara.getCamX(),camara.getCamY());
         prota.getJugador().draw(prota.getJugadorX(),prota.getJugadorY());
         
         
+=======
+                
+        this.prota.dibujar(g);
+>>>>>>> origin/master
         
     }
 
@@ -60,7 +70,11 @@ public class Juego extends BasicGameState{
     @Override
     public void update(GameContainer container, StateBasedGame game, int delta) throws SlickException {
         //this.prota.update(/*delta*/);
+<<<<<<< HEAD
         prota.movement(delta);
+=======
+        
+>>>>>>> origin/master
         Input entrada = container.getInput();
         if (entrada.isKeyPressed(Input.KEY_P)) {
             game.enterState(4);     //Al menú de pausa
