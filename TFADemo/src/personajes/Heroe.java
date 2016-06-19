@@ -11,6 +11,8 @@ import objetos.Puerta;
 import org.newdawn.slick.*;
 import org.newdawn.slick.geom.*;
 import org.newdawn.slick.state.*;
+import mapa.Mapa;
+import mapa.PuebloInicio;
 
 public class Heroe extends Personaje {
     private Animation ataque;
@@ -18,9 +20,7 @@ public class Heroe extends Personaje {
     private boolean cambioDeMapa;
     private Puerta puerta;
     private Shape areaColision;
-    private boolean arriba, abajo, izquierda, derecha, defecto = true;
-    private int delta;
-    
+    private Mapa mapa = new PuebloInicio();
     private SpriteSheet prota;
 
     public Heroe(GameContainer container) throws SlickException {
@@ -57,42 +57,40 @@ public class Heroe extends Personaje {
     }
     //Esta función iría en el update 
     public void movement(int delta) {
-        float jugadorAnteriorX = jugadorX; float jugadorAnteriorY = jugadorY;
+        float jugadorAnteriorX = jugadorX; 
+        float jugadorAnteriorY = jugadorY;
 
         Input input = container.getInput();
-        if (input.isKeyDown(Input.KEY_UP)) {
-            arriba = true;
-                 jugador = up;
-                 jugador.update(delta);
-                 jugadorY -= delta * 0.1f;
+        if (input.isKeyDown(Input.KEY_UP)) {     
+            jugador = up;
+            jugador.update(delta);
+            jugadorY -= delta * 0.1f;
             }
         else if (input.isKeyDown(Input.KEY_DOWN)){
-            abajo = true;
             jugador = down;
             jugador.update(delta);
             jugadorY += delta * 0.1f;
         }
         else if (input.isKeyDown(Input.KEY_LEFT)){
-            izquierda = true;
             jugador = left;
             jugador.update(delta);
             jugadorX -= delta * 0.1f;
         }
         else if (input.isKeyDown(Input.KEY_RIGHT))
         {
-            derecha = true;
             jugador = right;
             jugador.update(delta);
             jugadorX += delta * 0.1f;
         }
-        /*int a = (int)((jugadorX+8+jugador.getWidth())/tileWidth);
-        int b = (int)((jugadorY+jugador.getHeight())/ tileHeight);
-        int c = (int)((jugadorX-8+jugador.getWidth())/tileWidth);
-        int d = (int)((jugadorY+jugador.getHeight())/tileHeight);
-        if (blocked[a][b] || blocked[c][d]) {
+        
+        int a = (int)((jugadorX+8+jugador.getWidth())/mapa.getMapa().getTileWidth());
+        int b = (int)((jugadorY+jugador.getHeight())/ mapa.getMapa().getTileHeight());
+        int c = (int)((jugadorX-8+jugador.getWidth())/mapa.getMapa().getTileWidth());
+        int d = (int)((jugadorY+jugador.getHeight())/mapa.getMapa().getTileHeight());
+        if (mapa.getBlocked()[a][b] || mapa.getBlocked()[c][d]) {
                 jugadorX = jugadorAnteriorX;
                 jugadorY = jugadorAnteriorY;
-                }*/
+        }
     }
 
     @Override
@@ -124,8 +122,8 @@ public class Heroe extends Personaje {
 
     @Override
     public void sincronizarArea() {
-        areaColision.setX(jugadorX);
-        areaColision.setY(jugadorY);    
+        areaColision.setX(getJugadorX());
+        areaColision.setY(getJugadorY());    
     }
     
     @Override

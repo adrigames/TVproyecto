@@ -29,7 +29,7 @@ public class App extends StateBasedGame {
     public App() throws SlickException {
         super("RPG");
         contenedor = new AppGameContainer(this);
-        contenedor.setDisplayMode(800,800,false);
+        contenedor.setDisplayMode(800,600,false);
         contenedor.setShowFPS(false);
         contenedor.start();
     }

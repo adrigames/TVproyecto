@@ -35,13 +35,13 @@ public class Camara {
     public Camara(GameContainer container , TiledMap map, Personaje personaje){
         this.personaje = personaje;
         this.map = map;
-        distanciaBordeX = 400;
-        distanciaBordeY = 300;     
-        anchoMapa= map.getWidth()*map.getTileWidth()*zoom;
-        altoMapa = map.getHeight()*map.getTileHeight()*zoom;
+        distanciaBordeX = 100;
+        distanciaBordeY = 100;     
+        anchoMapa= map.getWidth()*map.getTileWidth();
+        altoMapa = map.getHeight()*map.getTileHeight();
         anchoVentana = container.getWidth();
         altoVentana= container.getHeight();
-        anchoTile = map.getTileHeight()*zoom; 
+        anchoTile = map.getTileHeight(); 
     }
 
     public float getCamX() {
@@ -50,10 +50,6 @@ public class Camara {
 
     public float getCamY() {
         return camY;
-    }
-    
-    public float getZoom() {
-        return zoom;
     }
     
     public void moverCamara(){

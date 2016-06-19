@@ -33,9 +33,7 @@ public class Juego extends BasicGameState{
     public void init(GameContainer container, StateBasedGame game) throws SlickException {
         this.game = game;
         this.container = container;
-        gestor = new GestorColisiones();
         mapa = new PuebloInicio();
-        gestor.blockMap(mapa);
         prota = new Heroe(container);
         camara = new Camara(container, mapa.getMapa(), prota);
         
@@ -46,7 +44,7 @@ public class Juego extends BasicGameState{
      */
     @Override
     public void render(GameContainer container, StateBasedGame game, Graphics g) throws SlickException {
-        mapa.getMapa().render(0, 0);
+        mapa.getMapa().render(-32,-17);
         g.translate(camara.getCamX(),camara.getCamY());
         prota.getJugador().draw(prota.getJugadorX(),prota.getJugadorY());
         
@@ -59,8 +57,8 @@ public class Juego extends BasicGameState{
      */
     @Override
     public void update(GameContainer container, StateBasedGame game, int delta) throws SlickException {
-        //this.prota.update(/*delta*/);
         prota.movement(delta);
+        //camara.moverCamara();
         Input entrada = container.getInput();
         if (entrada.isKeyPressed(Input.KEY_P)) {
             game.enterState(4);     //Al menú de pausa
