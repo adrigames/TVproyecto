@@ -21,7 +21,7 @@ public abstract class Personaje implements Collidable{
     protected SpriteSheet sprite;
     protected GameContainer container;
     protected float jugadorX, jugadorY;
-    protected Animation jugador, up, down, left, right, atacarUp, atacarDown, atacarLeft, atacarRight;
+    protected Animation jugador, up, down, left, right;
     protected Rectangle rect;
     protected float vida;
     protected float daño;

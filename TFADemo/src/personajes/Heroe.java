@@ -25,15 +25,11 @@ public class Heroe extends Personaje {
 
     public Heroe(GameContainer container) throws SlickException {
         super(container);
-        this.prota = new SpriteSheet("testdata/spritesPJ/protagonistaMov.png",64,64);
-        up = new Animation(prota,0,0,7,0,true,150,false);
-        left = new Animation(prota,0,1,7,1,true,150, false);
-        down = new Animation(prota,0,2,7,2,true,150, false);
-        right= new Animation(prota,0,3,7,3,true,150,false);
-        atacarUp = new Animation(prota,0,0,5,0,true,150,false);
-        atacarLeft = new Animation(prota,0,1,5,1,true,150,false);
-        atacarDown = new Animation(prota,0,2,5,2,true,150,false);
-        atacarRight = new Animation(prota,0,3,5,3,true,150,false);
+        this.prota = new SpriteSheet("testdata/protagonista.png",64,64);
+        up = new Animation(prota,0,0,2,0,true,150,false);
+        left = new Animation(prota,0,1,2,1,true,150, false);
+        down = new Animation(prota,0,2,2,2,true,150, false);
+        right= new Animation(prota,0,3,2,3,true,150,false);
         jugador = down;
         vida = 100;
         daño = 20;
@@ -86,28 +82,6 @@ public class Heroe extends Personaje {
             jugador = right;
             jugador.update(delta);
             jugadorX += delta * 0.1f;
-        }
-        else if (input.isKeyDown(Input.KEY_Q)){
-            if (jugador == right){
-                jugador = atacarRight;
-                jugador.update(delta);
-                jugadorX += delta * 0.1f;
-            }
-            else if (jugador == left){
-                jugador = atacarLeft;
-                jugador.update(delta);
-                jugadorX -= delta * 0.1f;
-            }
-            else if (jugador == up){
-                jugador = atacarUp;
-                jugador.update(delta);
-                jugadorY -= delta * 0.1f;
-            }
-            else if (jugador == down){
-                jugador = atacarDown;
-                jugador.update(delta);
-                jugadorY += delta * 0.1f;
-            }
         }
         
         int a = (int)((jugadorX+8+jugador.getWidth())/mapa.getMapa().getTileWidth());
