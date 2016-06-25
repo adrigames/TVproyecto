@@ -1,14 +1,18 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package mapa;
 
-/**
- *
- * @author Ángel
- */
-public class Ciudad {
+import logica.*;
+import org.newdawn.slick.*;
+import org.newdawn.slick.tiled.TiledMap;
+
+public class Ciudad extends Mapa{
     
+    private GestorColisiones gestor;
+    
+    public Ciudad() throws SlickException{
+        mapa = new TiledMap("testdata/mapasJuego/Ciudad.tmx");
+        gestor = new GestorColisiones();
+        tileWidth = mapa.getWidth();
+        tileHeight = mapa.getHeight();
+        setBlocked(mapa);
+    }
 }

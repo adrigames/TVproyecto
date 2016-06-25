@@ -27,27 +27,27 @@
   </data>
  </layer>
  <objectgroup name="Eventos" offsetx="0" offsety="1.33333">
-  <object id="1" x="157.333" y="-2.66667" width="66.6667" height="65.3333">
+  <object id="1" x="157" y="0" width="67" height="65">
    <properties>
     <property name="Clase" value="Puerta habitacion rey"/>
    </properties>
   </object>
-  <object id="2" x="128" y="3005.67" width="33" height="33">
+  <object id="2" x="128" y="3006" width="33" height="33">
    <properties>
     <property name="Clase" value="Escaleras final"/>
    </properties>
   </object>
-  <object id="4" x="220.5" y="3005.5" width="33" height="33">
+  <object id="4" x="222" y="3006" width="33" height="33">
    <properties>
     <property name="Clase" value="Escaleras final"/>
    </properties>
   </object>
-  <object id="5" x="224.5" y="3103.5" width="33" height="33">
+  <object id="5" x="224" y="3103" width="33" height="33">
    <properties>
     <property name="Clase" value="Escaleras final"/>
    </properties>
   </object>
-  <object id="6" x="127.5" y="3104.5" width="33" height="33">
+  <object id="6" x="127" y="3104" width="33" height="33">
    <properties>
     <property name="Clase" value="Escaleras final"/>
    </properties>
