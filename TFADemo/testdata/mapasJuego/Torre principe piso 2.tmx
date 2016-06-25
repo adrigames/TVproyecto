@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="left-up" width="50" height="50" tilewidth="32" tileheight="32" nextobjectid="11">
+ <tileset firstgid="1" name="rpg_maker_vx_rtp_tileset_by_telles0808" tilewidth="32" tileheight="32" tilecount="2016" columns="32">
+  <image source="../Tilesets/rpg_maker_vx_rtp_tileset_by_telles0808.png" width="1024" height="2016"/>
+ </tileset>
+ <tileset firstgid="2017" name="vx-buildingstileset" tilewidth="32" tileheight="32" tilecount="256" columns="16">
+  <image source="../Tilesets/vx-buildingstileset.png" width="512" height="512"/>
+ </tileset>
+ <layer name="Bloqueo" width="50" height="50">
+  <data encoding="base64" compression="zlib">
+   eJztVu0OwyAIbPb+D73srxnCfWCbhkuabIroCXhc12AwGAwGgx8+hu8JUM8xPLyIzlHNpSfxWM+S5f1beXR9KA9kPJtzgOWhxKMDjH+WR2cesTyQ8Z0fJdcdPNB4dEDhEd3XHf2HyiObO8FDrQ9UI7rQySOzdfDavVfsG4Hu6YiRekZV+9faYVHVKXa+sr/iqxrTzG6d67zTaE11352t8y1V46HYOt9RhYdq7+7DFB7VtUr/hOxRBds3nugDEX9Mbe54uOGoW3RNlxYjPBD7dd0/Xy4w9ergwcDRIzD9H5JXLk2s2Dj14wl5pfpndcGZV8g5IltWB9H/kc835VVXf+XQk279YPdE8QYed+eVi8+J/mo37u57KzaOHrHqK9OK9beqg1mOKH0pAuSeXTFR6zy6O4XHzk/E4wt+/AMt
+  </data>
+ </layer>
+ <layer name="Base" width="50" height="50">
+  <data encoding="base64" compression="zlib">
+   eJztwwEJAAAMBKGL+P3TLMdAwVVTVVVVVVVVVVXV5w+KLA1u
+  </data>
+ </layer>
+ <layer name="Paredes y objetos" width="50" height="50">
+  <data encoding="base64" compression="zlib">
+   eJztV8ttwzAMFdAm8K3dID13k9y6hk/JntmjFy9REA5RhXUo/mTZhR5AwI4jWk/vUaIvKaVLjx49evTo0eNfhQet5+7l8bUTHtIxreeex+34yAHu98hjIjymnfJYgmVMFFr4aks8LL6q6Ys1fbVFHhZfbZHH3n1Fdchxvj/7PMzXa2hk5UF1yDEeH6/X0MjKg9ODYq96UNTSowSJFt8vch4A/D/qCPdenThPSHJrtKDIx3p14uYhyQ1rme9JVpyNPHCsJH9i8oBmo0MTxGjkIX3/WNjzPb7KYa2PqD1Gi2fes9YH7hlST1v2idLcKSyaaN4NnGv7Kt1z3Qr1aFlHBLdO0ZgK9VirPjTrsYQlz2lqBRCx70b6CqD1FUC673J5LeDqXusriR/yPkiax3Om51zWro8t+EoDTx5ah1xdan0F0PTbHn/SOqT31IsaX0WdH619Vau/8ta5xVdRfXs0tOdgxPnR2lfR/ZVEWwla91cR34SS91nPD6hbT9/O6fQxpHR9neM0zL95z8H34ff6bfj73LoeJZ2QB6JGf4XQ9FcaLOmBXKz1wenxLO8PXMXwRA==
+  </data>
+ </layer>
+ <objectgroup name="Eventos">
+  <object id="3" x="511.333" y="1504.67" width="32.6667" height="30">
+   <properties>
+    <property name="Clase" value="Escaleras habitacion principe"/>
+   </properties>
+  </object>
+  <object id="4" x="604.333" y="1503.67" width="32.6667" height="30">
+   <properties>
+    <property name="Clase" value="Escaleras habitacion principe"/>
+   </properties>
+  </object>
+  <object id="5" x="606.333" y="1568.33" width="32.6667" height="30">
+   <properties>
+    <property name="Clase" value="Escaleras habitacion principe"/>
+   </properties>
+  </object>
+  <object id="6" x="511.667" y="1568.33" width="32.6667" height="30">
+   <properties>
+    <property name="Clase" value="Escaleras habitacion principe"/>
+   </properties>
+  </object>
+  <object id="7" x="1185" y="1507" width="32.6667" height="30">
+   <properties>
+    <property name="Clase" value="Escaleras principe p1"/>
+   </properties>
+  </object>
+  <object id="8" x="1281" y="1503.67" width="32.6667" height="30">
+   <properties>
+    <property name="Clase" value="Escaleras principe p1"/>
+   </properties>
+  </object>
+  <object id="9" x="1184.33" y="1567.67" width="32.6667" height="30">
+   <properties>
+    <property name="Clase" value="Escaleras principe p1"/>
+   </properties>
+  </object>
+  <object id="10" x="1280.33" y="1569.67" width="32.6667" height="30">
+   <properties>
+    <property name="Clase" value="Escaleras principe p1"/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>

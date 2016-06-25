@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="left-up" width="50" height="50" tilewidth="32" tileheight="32" nextobjectid="5">
+ <tileset firstgid="1" name="rpg_maker_vx_rtp_tileset_by_telles0808" tilewidth="32" tileheight="32" tilecount="2016" columns="32">
+  <image source="../Tilesets/rpg_maker_vx_rtp_tileset_by_telles0808.png" width="1024" height="2016"/>
+ </tileset>
+ <tileset firstgid="2017" name="trees barrels wooden things" tilewidth="32" tileheight="32" tilecount="256" columns="16">
+  <image source="../Tilesets/trees barrels wooden things.png" width="512" height="512"/>
+ </tileset>
+ <tileset firstgid="2273" name="vx-buildingstileset" tilewidth="32" tileheight="32" tilecount="256" columns="16">
+  <image source="../Tilesets/vx-buildingstileset.png" width="512" height="512"/>
+ </tileset>
+ <tileset firstgid="2529" name="vx-buildingstileset" tilewidth="32" tileheight="32" tilecount="256" columns="16">
+  <image source="../Tilesets/vx-buildingstileset.png" width="512" height="512"/>
+ </tileset>
+ <layer name="Bloqueo" width="50" height="50">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC+1Y0QrEIAwb/v9H39PBMaa1NUmrt8AYDE0bq7PtdXHQyONVyNLRgFxfPub4EQ9ah4ev8r7yPiqfdscpOnbASWv96qgFpY728161e+dg6WCvD1NHZJ0RMbLmeu/cp3Gzvnl0PMUCqWMW6LNhfUfxj8ZH5o/Godc9wlNRh+WHwkb1fMUbs6rnXG27alxXarnqde6/9Xii97wKlj8MfxnnLmsv76jjFBsKZNSTLG5mTdmrNVh5BuJu7NVGI252jFbne3J4FhA6VLZGvJFcpXcGZuYyEM2Lo1yVdKxwvTowvDP/z5kzkq3Dw2f12BhQ5+kKHch9kaFD2WNhxZ/J3fsXoO1YNhE27rFmx4Pdu2La6PW3vE82UPl6NhA+VNCBQETHB1ivQ90QJwAA
+  </data>
+ </layer>
+ <layer name="Base" width="50" height="50">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC+3DAQkAAAwEoWv3/Rstx0DBVVNVVVVVVVVVVdXnD/oreUYQJwAA
+  </data>
+ </layer>
+ <layer name="Suelo" width="50" height="50">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC+2Zi03EMAyGS9VWXQOk6x6wCYhFYBPYBCTYA07dg1RgneVzYsdx2iLdL0U9+rD9xYmTlqa5aI/66pvmu986inJdDU3TDul77trytgd5cOyhH7ZmuHBcOLbg0D67NUMpx1r51sS0F475b639CMfPxLqr8UPX7locc8H+QOOHrt2eHC8h9tfM+I/D+bO1xu918HUzyPbfQhzvhOPQ6XzgZyU/EE+ubhcGBYdWEpvkB+Kheux/myTJfmr+cmPuGOlTyY9mf57iKZnn3Jiz+tHszy0cueNtFuaB5zzneLz9Wu1pawdmwc2LA+JYIx8eHNZ125uDauz4pvHLjYXYc7E6ZhWtbyUcIFzHavc7iNY3z3wcMvk9ZeFI1RYrh7QO4jmdw3EffD+0fkdJmnVQK8zxFHw/t35Hqtz1wsqxdj5qcdTOB8i7HnM8nEr7HfcVdy7l2yrOttTvXC2m9mK28X05yvkmD7at+dD2s+Y+GndOrdPmQ3p+0dCd5sVAzms4rDWasy3lge4n8RiakC36u8b8wDFQWdcHKca1OazrAx1f9Brl8Py/miUfGlswpoBn7M7vyZ0LKW5tPlI1F9sCe/DNakpw5CrFje3CftOaD7C3NPzNCteq/zA/sE1ujK3FAfU0lQ/tXnYk8wPO1eSgOffY/4KtKYPDWr+gb2kfe+x/Y3urFIemflFWHDv9Hu71PhJ7Hy0RxwosUFvg7xrvIzXr1TIHoUG+8DnNtaVt/f44dacG+cLnNNeW5vX+aBXdA2lEx/pe8lHKYcnHD/3ksRoQJwAA
+  </data>
+ </layer>
+ <layer name="Casas" width="50" height="50">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC+2VwQlCMQyGg9BD1vKim+gquoFuoBs8N9BNPLmCFQ+FEOjjtX1Nyv9BySXQ/CR/QtSGExOdOcWP8mSORS6xriunqOmQORa5xbrunKKmQ+ZYZIp1PThFTYfM2W7yb22esa4Xp6jpkDmt2QWifWj/T2sOUcNxAB0eeIf/885vB+R09NwXc5mjwwPQYYtRdORunJcbmLtxuIHLqNF/CzNUo/+jzZCFvtRgtL6A9YEXAACgH9oO9riXtR2MvQyWUDr/VvxTOv/wDwB2/FwK/AxKkV7w6g3pBXijP15nSYJZAiV8AR5mA+YQJwAA
+  </data>
+ </layer>
+ <layer name="Detalles" width="50" height="50">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC+3PsRFAUBAE0B9fmXRAMTpCBSjHiQQi4fHezM5suNsab3TRWh/PXs2Qu8d49orm3L5k1sIfLlvu3zNH8R9T3KnsKz8AAAAAAAAAAP7kBKWxAXoQJwAA
+  </data>
+ </layer>
+ <objectgroup name="Eventos">
+  <object id="1" x="866.667" y="94.6667" width="93.3333" height="64">
+   <properties>
+    <property name="Clase" value="Puerta principe"/>
+   </properties>
+  </object>
+  <object id="3" x="2" y="256.667">
+   <properties>
+    <property name="Clase" value="Puerta ciudad"/>
+   </properties>
+   <polyline points="0,0 62,-0.666667 63.3333,189.333 30.6667,190 31.3333,32 -1.33333,31.3333 0,0"/>
+  </object>
+ </objectgroup>
+</map>

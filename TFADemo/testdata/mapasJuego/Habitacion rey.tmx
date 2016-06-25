@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="left-up" width="25" height="25" tilewidth="32" tileheight="32" nextobjectid="2">
+ <tileset firstgid="1" name="rpg_maker_vx_rtp_tileset_by_telles0808" tilewidth="32" tileheight="32" tilecount="2016" columns="32">
+  <image source="../Tilesets/rpg_maker_vx_rtp_tileset_by_telles0808.png" width="1024" height="2016"/>
+ </tileset>
+ <layer name="Bloqueo" width="25" height="25">
+  <data encoding="base64" compression="zlib">
+   eJxjYmBgYBrFJGN8AF2eGPUDYQctwKgdo3aM2jFqx6gdo3ZQww5q20NOXUstO0hpU5CiDwDy/AGD
+  </data>
+ </layer>
+ <layer name="Base" width="25" height="25">
+  <data encoding="base64" compression="zlib">
+   eJzzY2Fg8BvFo3gUj+JRPIpH8SgexUMKAwBN5cgz
+  </data>
+ </layer>
+ <layer name="Paredes" width="25" height="25">
+  <data encoding="base64" compression="zlib">
+   eJxjZGRgYBxGmBZg1I5RO0btGLVj1I5RO0btGLWDHDtIbbuQog8A9xYBQQ==
+  </data>
+ </layer>
+ <layer name="Detalles" width="25" height="25">
+  <data encoding="base64" compression="zlib">
+   eJxjYKAfmMHGwDAND54OxOLsDAwSQCzJTpx6dLADKLYND94OxOZAsy2A2JKdOPXoIJIdvz+j0OSjCajHZl4lAT1VaPLVBNQTMm8UjIJRMApGwSgYTIBQXUsN86hdN9K7rgUAkfUenQ==
+  </data>
+ </layer>
+ <objectgroup name="Eventos">
+  <object id="1" x="352" y="30.6667" width="93.3333" height="66.6667">
+   <properties>
+    <property name="Clase" value="Trono"/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>

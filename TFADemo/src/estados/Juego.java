@@ -33,7 +33,8 @@ public class Juego extends BasicGameState{
     public void init(GameContainer container, StateBasedGame game) throws SlickException {
         this.game = game;
         this.container = container;
-        mapa = new PuebloInicio();
+        //mapa = new PuebloInicio();
+        mapa = new CastilloPrincipe1();
         prota = new Heroe(container);
         camara = new Camara(container, mapa.getMapa(), prota);
         
