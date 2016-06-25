@@ -13,7 +13,7 @@ public class PuebloInicio extends Mapa {
     
     
     public PuebloInicio() throws SlickException {
-        mapa = new TiledMap("testdata/puebloInicio.tmx");
+        mapa = new TiledMap("testdata/mapasJuego/Pueblo inicio.tmx");
         gestor = new GestorColisiones();
         tileWidth = mapa.getWidth();
         tileHeight = mapa.getHeight();

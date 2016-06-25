@@ -18,6 +18,8 @@ public class Juego extends BasicGameState{
     private GestorColisiones gestor;
     private Camara camara;
     private Mapa mapa;
+    private Mapa camino;
+    private Mapa puebloInicio;
     private Heroe prota;
     
 
@@ -33,8 +35,9 @@ public class Juego extends BasicGameState{
     public void init(GameContainer container, StateBasedGame game) throws SlickException {
         this.game = game;
         this.container = container;
-        //mapa = new PuebloInicio();
-        mapa = new CastilloPrincipe1();
+        puebloInicio = new PuebloInicio();
+        camino = new Camino();
+        mapa = puebloInicio;
         prota = new Heroe(container);
         camara = new Camara(container, mapa.getMapa(), prota);
         

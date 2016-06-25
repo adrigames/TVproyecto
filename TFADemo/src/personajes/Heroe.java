@@ -7,12 +7,12 @@ package personajes;
 
 import java.util.ArrayList;
 import logica.Collidable;
+import mapa.Camino;
 import objetos.Puerta;
 import org.newdawn.slick.*;
 import org.newdawn.slick.geom.*;
 import org.newdawn.slick.state.*;
-import mapa.Mapa;
-import mapa.PuebloInicio;
+import mapa.*;
 
 public class Heroe extends Personaje {
     private Animation ataque;
@@ -20,7 +20,7 @@ public class Heroe extends Personaje {
     private boolean cambioDeMapa;
     private Puerta puerta;
     private Shape areaColision;
-    private Mapa mapa = new PuebloInicio();
+    private Mapa mapa = null;
     private SpriteSheet prota;
 
     public Heroe(GameContainer container) throws SlickException {
@@ -35,6 +35,7 @@ public class Heroe extends Personaje {
         daño = 20;
         jugadorX = 400;
         jugadorY = 400;
+        mapa = new PuebloInicio();
         /*for (int i = 0; i < 9; i++) { 
             down.addFrame(prota.getSprite(i, 10), 100);
         }

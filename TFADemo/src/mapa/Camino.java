@@ -8,7 +8,7 @@ public class Camino extends Mapa{
     private GestorColisiones gestor;
     
     public Camino() throws SlickException{
-        mapa = new TiledMap("testdata/mapasJuego/Camino.tmx");
+        mapa= new TiledMap("/testdata/mapasJuego/Camino.tmx");
         gestor = new GestorColisiones();
         tileWidth = mapa.getWidth();
         tileHeight = mapa.getHeight();
