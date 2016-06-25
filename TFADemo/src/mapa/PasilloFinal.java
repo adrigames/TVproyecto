@@ -1,14 +1,18 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package mapa;
 
-/**
- *
- * @author Ángel
- */
-public class PasilloFinal {
+import logica.*;
+import org.newdawn.slick.*;
+import org.newdawn.slick.tiled.TiledMap;
+
+public class PasilloFinal extends Mapa{
     
+    private GestorColisiones gestor;
+    
+    public PasilloFinal() throws SlickException{
+        mapa = new TiledMap("testdata/mapasJuego/Pasillo final.tmx");
+        gestor = new GestorColisiones();
+        tileWidth = mapa.getWidth();
+        tileHeight = mapa.getHeight();
+        setBlocked(mapa);
+    }
 }

@@ -1,14 +1,19 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package mapa;
 
-/**
- *
- * @author Ángel
- */
-public class CastilloReal1 {
+import logica.*;
+import org.newdawn.slick.*;
+import org.newdawn.slick.tiled.TiledMap;
+
+public class CastilloReal1 extends Mapa{
+    
+    private GestorColisiones gestor;
+    
+    public CastilloReal1() throws SlickException{
+        mapa = new TiledMap("testdata/mapasJuego/Castillo real piso 1.tmx");
+        gestor = new GestorColisiones();
+        tileWidth = mapa.getWidth();
+        tileHeight = mapa.getHeight();
+        setBlocked(mapa);
+    }
     
 }

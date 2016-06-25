@@ -22,42 +22,42 @@
   </data>
  </layer>
  <objectgroup name="Eventos">
-  <object id="3" x="511.333" y="1504.67" width="32.6667" height="30">
+  <object id="3" x="511" y="1505" width="33" height="30">
    <properties>
     <property name="Clase" value="Escaleras habitacion principe"/>
    </properties>
   </object>
-  <object id="4" x="604.333" y="1503.67" width="32.6667" height="30">
+  <object id="4" x="605" y="1504" width="33" height="30">
    <properties>
     <property name="Clase" value="Escaleras habitacion principe"/>
    </properties>
   </object>
-  <object id="5" x="606.333" y="1568.33" width="32.6667" height="30">
+  <object id="5" x="607" y="1568" width="33" height="30">
    <properties>
     <property name="Clase" value="Escaleras habitacion principe"/>
    </properties>
   </object>
-  <object id="6" x="511.667" y="1568.33" width="32.6667" height="30">
+  <object id="6" x="512" y="1568" width="33" height="30">
    <properties>
     <property name="Clase" value="Escaleras habitacion principe"/>
    </properties>
   </object>
-  <object id="7" x="1185" y="1507" width="32.6667" height="30">
+  <object id="7" x="1185" y="1507" width="33" height="30">
    <properties>
     <property name="Clase" value="Escaleras principe p1"/>
    </properties>
   </object>
-  <object id="8" x="1281" y="1503.67" width="32.6667" height="30">
+  <object id="8" x="1281" y="1504" width="33" height="30">
    <properties>
     <property name="Clase" value="Escaleras principe p1"/>
    </properties>
   </object>
-  <object id="9" x="1184.33" y="1567.67" width="32.6667" height="30">
+  <object id="9" x="1184" y="1568" width="33" height="30">
    <properties>
     <property name="Clase" value="Escaleras principe p1"/>
    </properties>
   </object>
-  <object id="10" x="1280.33" y="1569.67" width="32.6667" height="30">
+  <object id="10" x="1280" y="1570" width="33" height="30">
    <properties>
     <property name="Clase" value="Escaleras principe p1"/>
    </properties>

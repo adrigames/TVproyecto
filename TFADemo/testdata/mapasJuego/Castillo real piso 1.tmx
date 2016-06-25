@@ -27,22 +27,22 @@
   </data>
  </layer>
  <objectgroup name="Eventos">
-  <object id="1" x="1184" y="958.667" width="32" height="32">
+  <object id="1" x="1184" y="958" width="32" height="32">
    <properties>
     <property name="Clase" value="Escaleras castillo p2"/>
    </properties>
   </object>
-  <object id="4" x="1184" y="1057.33" width="32" height="32">
+  <object id="4" x="1184" y="1057" width="32" height="32">
    <properties>
     <property name="Clase" value="Escaleras castillo p2"/>
    </properties>
   </object>
-  <object id="5" x="1278.67" y="1053.33" width="32" height="32">
+  <object id="5" x="1278" y="1053" width="32" height="32">
    <properties>
     <property name="Clase" value="Escaleras castillo p2"/>
    </properties>
   </object>
-  <object id="6" x="1277.33" y="958.667" width="32" height="32">
+  <object id="6" x="1277" y="958" width="32" height="32">
    <properties>
     <property name="Clase" value="Escaleras castillo p2"/>
    </properties>

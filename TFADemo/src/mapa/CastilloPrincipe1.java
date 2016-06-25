@@ -1,7 +1,7 @@
 package mapa;
 
-import logica.GestorColisiones;
-import org.newdawn.slick.SlickException;
+import logica.*;
+import org.newdawn.slick.*;
 import org.newdawn.slick.tiled.TiledMap;
 
 public class CastilloPrincipe1 extends Mapa{
