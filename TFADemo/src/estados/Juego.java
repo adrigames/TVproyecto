@@ -48,7 +48,7 @@ public class Juego extends BasicGameState{
      */
     @Override
     public void render(GameContainer container, StateBasedGame game, Graphics g) throws SlickException {
-        mapa.getMapa().render(-32,-17);
+        mapa.getMapa().render(-32,-10);
         g.translate(camara.getCamX(),camara.getCamY());
         prota.getJugador().draw(prota.getJugadorX(),prota.getJugadorY());
         

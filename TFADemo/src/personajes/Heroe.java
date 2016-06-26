@@ -22,14 +22,23 @@ public class Heroe extends Personaje {
     private Shape areaColision;
     private Mapa mapa = null;
     private SpriteSheet prota;
-
+    private SpriteSheet protaAtacar;
+    private SpriteSheet protaMuerte;
+    
     public Heroe(GameContainer container) throws SlickException {
         super(container);
-        this.prota = new SpriteSheet("testdata/protagonista.png",64,64);
-        up = new Animation(prota,0,0,2,0,true,150,false);
-        left = new Animation(prota,0,1,2,1,true,150, false);
-        down = new Animation(prota,0,2,2,2,true,150, false);
-        right= new Animation(prota,0,3,2,3,true,150,false);
+        this.prota = new SpriteSheet("testdata/spritesPj/protagonistaMov.png",64,64);
+        this.protaAtacar = new SpriteSheet("testdata/spritesPj/protagonistaAtacando.png",64,64);
+        this.protaMuerte = new SpriteSheet("testdata/spritesPj/protagonistaMuerte.png",64,64);
+        up = new Animation(prota,0,0,7,0,true,150,false);
+        left = new Animation(prota,0,1,7,1,true,150, false);
+        down = new Animation(prota,0,2,7,2,true,150, false);
+        right= new Animation(prota,0,3,7,3,true,150,false);
+        atacarUp = new Animation(protaAtacar,0,0,5,0,true,150,false);
+        atacarLeft = new Animation(protaAtacar,0,1,5,1,true,150,false);
+        atacarDown = new Animation(protaAtacar,0,2,5,2,true,150,false);
+        atacarRight = new Animation(protaAtacar,0,3,5,3,true,150,false);
+        muerte = new Animation(protaMuerte,0,0,5,0,true,150,false);
         jugador = down;
         vida = 100;
         daño = 20;
@@ -63,26 +72,66 @@ public class Heroe extends Personaje {
 
         Input input = container.getInput();
         if (input.isKeyDown(Input.KEY_UP)) {     
-            jugador = up;
-            jugador.update(delta);
+            if (input.isKeyDown(Input.KEY_UP) && input.isKeyDown(Input.KEY_Q))
+                jugador = atacarUp;
+            else{
+                jugador = up;
+            }
+            jugador.update(delta*2);
             jugadorY -= delta * 0.1f;
+            
             }
         else if (input.isKeyDown(Input.KEY_DOWN)){
-            jugador = down;
-            jugador.update(delta);
+            if (input.isKeyDown(Input.KEY_DOWN) && input.isKeyDown(Input.KEY_Q))
+                jugador = atacarDown;
+            else{
+                jugador = down;
+            }
+            jugador.update(delta*2);
             jugadorY += delta * 0.1f;
         }
         else if (input.isKeyDown(Input.KEY_LEFT)){
-            jugador = left;
-            jugador.update(delta);
+            if (input.isKeyDown(Input.KEY_LEFT) && input.isKeyDown(Input.KEY_Q))
+                jugador = atacarLeft;
+            else{
+                jugador = left;
+            }
+            jugador.update(delta*2);
             jugadorX -= delta * 0.1f;
         }
-        else if (input.isKeyDown(Input.KEY_RIGHT))
-        {
-            jugador = right;
-            jugador.update(delta);
+        else if (input.isKeyDown(Input.KEY_RIGHT)){
+            if (input.isKeyDown(Input.KEY_RIGHT) && input.isKeyDown(Input.KEY_Q))
+                jugador = atacarRight;
+            else{
+                jugador = right;
+            }
+            jugador.update(delta*2);
             jugadorX += delta * 0.1f;
         }
+        
+        else if (input.isKeyDown(Input.KEY_Q)){ 
+            if(jugador == up){
+                jugador = atacarUp;
+            }
+            else if(jugador == down){
+                jugador = atacarDown;
+            }
+            else if(jugador == left){
+                jugador = atacarLeft;
+            }
+            else if(jugador == right){
+                jugador = atacarRight;
+            }
+            jugador.update(delta*2);
+        }
+        else if(input.isKeyDown(Input.KEY_D)){
+            jugador = muerte;
+            jugador.update(delta*2);
+        }
+        
+        /*else{
+            if jugador
+        }*/
         
         int a = (int)((jugadorX+8+jugador.getWidth())/mapa.getMapa().getTileWidth());
         int b = (int)((jugadorY+jugador.getHeight())/ mapa.getMapa().getTileHeight());
