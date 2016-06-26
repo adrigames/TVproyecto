@@ -11,12 +11,13 @@ public class PuebloInicio extends Mapa {
     private Puerta salidaPueblo;
     private GestorColisiones gestor;
     
-    
     public PuebloInicio() throws SlickException {
+        
         mapa = new TiledMap("testdata/mapasJuego/Pueblo inicio.tmx");
         gestor = new GestorColisiones();
         tileWidth = mapa.getWidth();
         tileHeight = mapa.getHeight();
+        salidaPueblo = new Puerta(385, 31, gestor);
         setBlocked(mapa);
     }
     

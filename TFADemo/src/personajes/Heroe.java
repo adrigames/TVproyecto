@@ -1,17 +1,11 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package personajes;
 
+import estados.Juego;
 import java.util.ArrayList;
-import logica.Collidable;
-import mapa.Camino;
+import logica.*;
 import objetos.Puerta;
 import org.newdawn.slick.*;
 import org.newdawn.slick.geom.*;
-import org.newdawn.slick.state.*;
 import mapa.*;
 
 public class Heroe extends Personaje {
@@ -24,8 +18,11 @@ public class Heroe extends Personaje {
     private SpriteSheet prota;
     private SpriteSheet protaAtacar;
     private SpriteSheet protaMuerte;
+    private GestorColisiones gestor;
+    //private String mapaActual = "puebloInicio";
+    private Juego juego;
     
-    public Heroe(GameContainer container) throws SlickException {
+    public Heroe(GameContainer container, GestorColisiones gestor) throws SlickException {
         super(container);
         this.prota = new SpriteSheet("testdata/spritesPj/protagonistaMov.png",64,64);
         this.protaAtacar = new SpriteSheet("testdata/spritesPj/protagonistaAtacando.png",64,64);
@@ -39,6 +36,7 @@ public class Heroe extends Personaje {
         atacarDown = new Animation(protaAtacar,0,2,5,2,true,150,false);
         atacarRight = new Animation(protaAtacar,0,3,5,3,true,150,false);
         muerte = new Animation(protaMuerte,0,0,5,0,true,150,false);
+        this.gestor = gestor;
         jugador = down;
         vida = 100;
         daño = 20;
@@ -164,9 +162,10 @@ public class Heroe extends Personaje {
         if(colision.getClass().getSimpleName().equals("Puerta")){
             this.puerta = (Puerta)colision;
             Input input = container.getInput();
-            if(input.isKeyDown(Input.KEY_J)){
+            //if(input.isKeyDown(Input.KEY_F)){
                 cambioDeMapa = true;
-            }
+            //}
+            
         }
     }
 
@@ -180,6 +179,45 @@ public class Heroe extends Personaje {
     public void render(int delta, Graphics g) throws SlickException{
         this.delta = delta;
         
+    }
+    
+    public void cambiarMapa(String mapaNuevo) throws SlickException{
+        gestor.negateItem(puerta);
+        switch(mapaNuevo){
+            case "camino":
+                mapa = new Camino();
+                break;
+            case "castilloPrincipe1":
+                mapa = new CastilloPrincipe1();
+                break;
+            case "ciudad":
+                mapa = new Ciudad();
+                break;
+            case "castilloPrincipe2":
+                mapa = new CastilloPrincipe2();
+                break;
+            case "habitacionPrincipe":
+                mapa = new HabitacionPrincipe();
+                break;
+            case "caminoS1":
+                mapa = new Camino();
+                break;
+            case "caminoS2":
+                mapa = new Camino();
+                break;
+            case "castilloReal1":
+                mapa = new CastilloReal1();
+                break;
+            case "castilloReal2":
+                mapa = new CastilloReal2();
+                break;
+            case "pasillo":
+                mapa = new PasilloFinal();
+                break;
+            case "habitacionRey":
+                mapa = new HabitacionRey();
+                break;
+        }
     }
     
 }

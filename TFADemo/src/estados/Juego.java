@@ -19,8 +19,17 @@ public class Juego extends BasicGameState{
     private Camara camara;
     private Mapa mapa;
     private Mapa camino;
+    private Mapa castilloPrincipe1;
+    private Mapa castilloPrincipe2;
+    private Mapa castilloReal1;
+    private Mapa castilloReal2;
+    private Mapa ciudad;
+    private Mapa habitacionPrincipe;
+    private Mapa habitacionRey;
+    private Mapa pasilloFinal;
     private Mapa puebloInicio;
     private Heroe prota;
+    private String mapaActual;
     
 
     @Override
@@ -38,9 +47,9 @@ public class Juego extends BasicGameState{
         puebloInicio = new PuebloInicio();
         camino = new Camino();
         mapa = puebloInicio;
-        prota = new Heroe(container);
+        mapaActual = "puebloInicio";
+        prota = new Heroe(container, gestor);
         camara = new Camara(container, mapa.getMapa(), prota);
-        
     }
 
     /**
@@ -51,8 +60,6 @@ public class Juego extends BasicGameState{
         mapa.getMapa().render(-32,-10);
         g.translate(camara.getCamX(),camara.getCamY());
         prota.getJugador().draw(prota.getJugadorX(),prota.getJugadorY());
-        
-        
         
     }
 
@@ -70,7 +77,61 @@ public class Juego extends BasicGameState{
         if(entrada.isKeyPressed(Input.KEY_ESCAPE)){
             game.enterState(6);     //Al menú de final de partida
         }
+        if(entrada.isKeyPressed(Input.KEY_B)){
+            //prota.cambiarMapa(); //Prueba
+            cambioMapa();
+        }
+        if(entrada.isKeyPressed(Input.KEY_F) && prota.getCambioDeMapa()){
+            cambioMapa();
+        }
         
+    }
+    
+    public void cambioMapa() throws SlickException{
+        switch(mapaActual){
+            case "puebloInicio":
+                mapa = camino;
+                mapaActual = "camino";
+                prota.cambiarMapa(mapaActual);
+                break;
+            case "camino":
+                mapa = castilloPrincipe1;
+                mapaActual = "castilloPrincipe1";
+                break;
+            case "habitacionPrincipe":
+                mapa = ciudad;
+                mapaActual = "ciudad";
+                break;
+            case "castilloPrincipe1":
+                mapa = castilloPrincipe2;
+                mapaActual = "castilloPrincipe2";
+                break;
+            case "castilloPrincipe2":
+                mapa = habitacionPrincipe;
+                mapaActual = "habitacionPrincipe";
+                break;
+            /*case "habitacionPrincipe":
+                mapa = camino;
+                mapaActual = "camino";
+                break;
+            */
+            case "ciudad":
+                mapa = castilloReal1;
+                mapaActual = "castilloReal1";
+                break;
+            case "castilloReal1":
+                mapa = castilloReal2;
+                mapaActual = "castilloReal2";
+                break;
+            case "castilloReal2":
+                mapa = pasilloFinal;
+                mapaActual = "pasillo";
+                break;
+            case "pasillo":
+                mapa = habitacionRey;
+                mapaActual = "habitacionRey";
+                break;
+        }
     }
     
 }
