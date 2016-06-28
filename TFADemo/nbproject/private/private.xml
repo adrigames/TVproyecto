@@ -5,8 +5,8 @@
         <group>
             <file>file:/C:/Users/Angel/Documents/GitHub/TVproyecto/TFADemo/src/personajes/Heroe.java</file>
             <file>file:/C:/Users/Angel/Documents/GitHub/TVproyecto/TFADemo/src/estados/Juego.java</file>
-            <file>file:/C:/Users/Angel/Documents/GitHub/TVproyecto/TFADemo/src/objetos/Puerta.java</file>
             <file>file:/C:/Users/Angel/Documents/GitHub/TVproyecto/TFADemo/src/mapa/PuebloInicio.java</file>
+            <file>file:/C:/Users/Angel/Documents/GitHub/TVproyecto/TFADemo/src/logica/GestorColisiones.java</file>
         </group>
     </open-files>
 </project-private>

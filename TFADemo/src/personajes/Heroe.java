@@ -13,17 +13,20 @@ public class Heroe extends Personaje {
     private ArrayList inventario;
     private boolean cambioDeMapa;
     private Puerta puerta;
-    private Shape areaColision;
+    private Rectangle areaColision;
     private Mapa mapa = null;
     private SpriteSheet prota;
     private SpriteSheet protaAtacar;
     private SpriteSheet protaMuerte;
     private GestorColisiones gestor;
+    private int anchoSprite, altoSprite;
+    private float anchoDibujado, altoDibujado;
     //private String mapaActual = "puebloInicio";
-    private Juego juego;
     
     public Heroe(GameContainer container, GestorColisiones gestor) throws SlickException {
         super(container);
+        this.gestor = gestor;
+        //gestor.recordItem(this);
         this.prota = new SpriteSheet("testdata/spritesPj/protagonistaMov.png",64,64);
         this.protaAtacar = new SpriteSheet("testdata/spritesPj/protagonistaAtacando.png",64,64);
         this.protaMuerte = new SpriteSheet("testdata/spritesPj/protagonistaMuerte.png",64,64);
@@ -36,12 +39,17 @@ public class Heroe extends Personaje {
         atacarDown = new Animation(protaAtacar,0,2,5,2,true,150,false);
         atacarRight = new Animation(protaAtacar,0,3,5,3,true,150,false);
         muerte = new Animation(protaMuerte,0,0,5,0,true,150,false);
-        this.gestor = gestor;
         jugador = down;
         vida = 100;
         daño = 20;
         jugadorX = 400;
         jugadorY = 400;
+        //nuevo
+        anchoSprite = 32;
+        altoSprite = 32;
+        anchoDibujado = anchoSprite * 2f;
+        altoDibujado = altoSprite * 2f;
+        areaColision = new Rectangle(jugadorX, jugadorY, anchoDibujado, altoDibujado);
         mapa = new PuebloInicio();
         /*for (int i = 0; i < 9; i++) { 
             down.addFrame(prota.getSprite(i, 10), 100);
@@ -69,62 +77,64 @@ public class Heroe extends Personaje {
         float jugadorAnteriorY = jugadorY;
 
         Input input = container.getInput();
-        if (input.isKeyDown(Input.KEY_UP)) {     
-            if (input.isKeyDown(Input.KEY_UP) && input.isKeyDown(Input.KEY_Q))
-                jugador = atacarUp;
-            else{
-                jugador = up;
+        if(vida>0){
+            if (input.isKeyDown(Input.KEY_UP)) {     
+                if (input.isKeyDown(Input.KEY_UP) && input.isKeyDown(Input.KEY_Q))
+                    jugador = atacarUp;
+                else{
+                    jugador = up;
+                }
+                jugador.update(delta*2);
+                jugadorY -= delta * 0.1f;
+
+                }
+            else if (input.isKeyDown(Input.KEY_DOWN)){
+                if (input.isKeyDown(Input.KEY_DOWN) && input.isKeyDown(Input.KEY_Q))
+                    jugador = atacarDown;
+                else{
+                    jugador = down;
+                }
+                jugador.update(delta*2);
+                jugadorY += delta * 0.1f;
             }
-            jugador.update(delta*2);
-            jugadorY -= delta * 0.1f;
-            
+            else if (input.isKeyDown(Input.KEY_LEFT)){
+                if (input.isKeyDown(Input.KEY_LEFT) && input.isKeyDown(Input.KEY_Q))
+                    jugador = atacarLeft;
+                else{
+                    jugador = left;
+                }
+                jugador.update(delta*2);
+                jugadorX -= delta * 0.1f;
             }
-        else if (input.isKeyDown(Input.KEY_DOWN)){
-            if (input.isKeyDown(Input.KEY_DOWN) && input.isKeyDown(Input.KEY_Q))
-                jugador = atacarDown;
-            else{
-                jugador = down;
+            else if (input.isKeyDown(Input.KEY_RIGHT)){
+                if (input.isKeyDown(Input.KEY_RIGHT) && input.isKeyDown(Input.KEY_Q))
+                    jugador = atacarRight;
+                else{
+                    jugador = right;
+                }
+                jugador.update(delta*2);
+                jugadorX += delta * 0.1f;
             }
-            jugador.update(delta*2);
-            jugadorY += delta * 0.1f;
-        }
-        else if (input.isKeyDown(Input.KEY_LEFT)){
-            if (input.isKeyDown(Input.KEY_LEFT) && input.isKeyDown(Input.KEY_Q))
-                jugador = atacarLeft;
-            else{
-                jugador = left;
+
+            else if (input.isKeyDown(Input.KEY_Q)){ 
+                if(jugador == up){
+                    jugador = atacarUp;
+                }
+                else if(jugador == down){
+                    jugador = atacarDown;
+                }
+                else if(jugador == left){
+                    jugador = atacarLeft;
+                }
+                else if(jugador == right){
+                    jugador = atacarRight;
+                }
+                jugador.update(delta*2);
             }
-            jugador.update(delta*2);
-            jugadorX -= delta * 0.1f;
-        }
-        else if (input.isKeyDown(Input.KEY_RIGHT)){
-            if (input.isKeyDown(Input.KEY_RIGHT) && input.isKeyDown(Input.KEY_Q))
-                jugador = atacarRight;
-            else{
-                jugador = right;
+            else if(input.isKeyDown(Input.KEY_D)){
+                jugador = muerte;
+                jugador.update(delta*2);
             }
-            jugador.update(delta*2);
-            jugadorX += delta * 0.1f;
-        }
-        
-        else if (input.isKeyDown(Input.KEY_Q)){ 
-            if(jugador == up){
-                jugador = atacarUp;
-            }
-            else if(jugador == down){
-                jugador = atacarDown;
-            }
-            else if(jugador == left){
-                jugador = atacarLeft;
-            }
-            else if(jugador == right){
-                jugador = atacarRight;
-            }
-            jugador.update(delta*2);
-        }
-        else if(input.isKeyDown(Input.KEY_D)){
-            jugador = muerte;
-            jugador.update(delta*2);
         }
         
         /*else{
@@ -139,6 +149,8 @@ public class Heroe extends Personaje {
                 jugadorX = jugadorAnteriorX;
                 jugadorY = jugadorAnteriorY;
         }
+        sincronizarArea();
+        //gestor.checkCollision();
     }
 
     @Override
@@ -159,11 +171,12 @@ public class Heroe extends Personaje {
     //Las interacciones de los objetos con el personaje van aquí.
     @Override
     public void alColisionar(Collidable colision) {
-        if(colision.getClass().getSimpleName().equals("Puerta")){
+        if(colision.getClass().getSimpleName().equals("Objetos.Puerta")){
             this.puerta = (Puerta)colision;
             Input input = container.getInput();
             //if(input.isKeyDown(Input.KEY_F)){
                 cambioDeMapa = true;
+                System.out.println("BIEEEEEEEEEEEEEEEEN");
             //}
             
         }
@@ -171,8 +184,8 @@ public class Heroe extends Personaje {
 
     @Override
     public void sincronizarArea() {
-        areaColision.setX(getJugadorX());
-        areaColision.setY(getJugadorY());    
+        areaColision.setX(jugadorX);
+        areaColision.setY(jugadorY);    
     }
     
     @Override

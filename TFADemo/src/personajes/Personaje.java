@@ -12,6 +12,7 @@ import org.newdawn.slick.Graphics;
 import org.newdawn.slick.SlickException;
 import org.newdawn.slick.SpriteSheet;
 import org.newdawn.slick.geom.Rectangle;
+import org.newdawn.slick.state.StateBasedGame;
 
 /**
  *
@@ -20,6 +21,7 @@ import org.newdawn.slick.geom.Rectangle;
 public abstract class Personaje implements Collidable{
     protected SpriteSheet sprite;
     protected GameContainer container;
+    protected StateBasedGame game;
     protected float jugadorX, jugadorY;
     protected Animation jugador, up, down, left, right, atacarUp, atacarDown, atacarLeft, atacarRight, muerte;
     protected Rectangle rect;
@@ -29,6 +31,7 @@ public abstract class Personaje implements Collidable{
 
     public Personaje(GameContainer container) {
         this.container = container;
+        
     }
     
     public void update(int delta) throws SlickException{
