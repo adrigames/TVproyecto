@@ -30,6 +30,7 @@ public class Juego extends BasicGameState{
     private Mapa puebloInicio;
     private Heroe prota;
     private String mapaActual;
+    private Sound musicaFondo;
     
 
     @Override
@@ -50,6 +51,7 @@ public class Juego extends BasicGameState{
         mapaActual = "puebloInicio";
         prota = new Heroe(container, gestor);
         camara = new Camara(container, mapa.getMapa(), prota);
+        musicaFondo = new Sound ("testdata/musicaPueblo.ogg");
     }
 
     /**
@@ -60,6 +62,7 @@ public class Juego extends BasicGameState{
         mapa.getMapa().render(-32,-10);
         g.translate(camara.getCamX(),camara.getCamY());
         prota.getJugador().draw(prota.getJugadorX(),prota.getJugadorY());
+        musicaFondo.loop();
         
     }
 
