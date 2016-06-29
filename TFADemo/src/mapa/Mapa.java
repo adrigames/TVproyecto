@@ -1,5 +1,6 @@
 package mapa;
 
+import objetos.Puerta;
 import org.newdawn.slick.tiled.TiledMap;
 
 public abstract class Mapa {
@@ -7,6 +8,7 @@ public abstract class Mapa {
     protected float tileWidth;
     protected float tileHeight;
     protected boolean[][] blocked;
+    private Puerta puerta;
 
     public Mapa() {
         
@@ -32,5 +34,9 @@ public abstract class Mapa {
                 
                 }
         }
+    }
+    
+    public Puerta getPuerta(){
+        return puerta;
     }
 }

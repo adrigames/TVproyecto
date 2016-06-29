@@ -7,6 +7,7 @@ import objetos.Puerta;
 import org.newdawn.slick.*;
 import org.newdawn.slick.geom.*;
 import mapa.*;
+import org.newdawn.slick.state.StateBasedGame;
 
 public class Heroe extends Personaje {
     private Animation ataque;
@@ -23,7 +24,7 @@ public class Heroe extends Personaje {
     private float anchoDibujado, altoDibujado;
     //private String mapaActual = "puebloInicio";
     
-    public Heroe(GameContainer container, GestorColisiones gestor) throws SlickException {
+    public Heroe(GameContainer container,StateBasedGame game,Collidable colisiones, GestorColisiones gestor) throws SlickException {
         super(container);
         this.gestor = gestor;
         //gestor.recordItem(this);
@@ -50,7 +51,8 @@ public class Heroe extends Personaje {
         anchoDibujado = anchoSprite * 2f;
         altoDibujado = altoSprite * 2f;
         areaColision = new Rectangle(jugadorX, jugadorY, anchoDibujado, altoDibujado);
-        mapa = new PuebloInicio();
+        mapa = new PuebloInicio(container,game);
+        
         /*for (int i = 0; i < 9; i++) { 
             down.addFrame(prota.getSprite(i, 10), 100);
         }
@@ -174,10 +176,10 @@ public class Heroe extends Personaje {
         if(colision.getClass().getSimpleName().equals("Objetos.Puerta")){
             this.puerta = (Puerta)colision;
             Input input = container.getInput();
-            //if(input.isKeyDown(Input.KEY_F)){
+            if(input.isKeyPressed(Input.KEY_F)){
                 cambioDeMapa = true;
                 System.out.println("BIEEEEEEEEEEEEEEEEN");
-            //}
+            }
             
         }
     }

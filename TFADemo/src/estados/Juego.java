@@ -6,6 +6,7 @@ package estados;
  */
 
 import logica.Camara;
+import logica.Collidable;
 import logica.GestorColisiones;
 import mapa.*;
 import org.newdawn.slick.*;
@@ -14,6 +15,7 @@ import personajes.*;
 
 public class Juego extends BasicGameState{
     private GameContainer container;
+    private Collidable colisiones;
     private StateBasedGame game;
     private GestorColisiones gestor;
     private Camara camara;
@@ -45,11 +47,12 @@ public class Juego extends BasicGameState{
     public void init(GameContainer container, StateBasedGame game) throws SlickException {
         this.game = game;
         this.container = container;
-        puebloInicio = new PuebloInicio();
+        gestor = new GestorColisiones();
+        puebloInicio = new PuebloInicio(container,game);
         camino = new Camino();
         mapa = puebloInicio;
         mapaActual = "puebloInicio";
-        prota = new Heroe(container, gestor);
+        prota = new Heroe(container,game,colisiones, gestor);
         camara = new Camara(container, mapa.getMapa(), prota);
         musicaFondo = new Sound ("testdata/musicaPueblo.ogg");
     }
