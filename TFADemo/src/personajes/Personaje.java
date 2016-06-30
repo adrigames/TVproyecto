@@ -28,6 +28,9 @@ public abstract class Personaje implements Collidable{
     protected float vida;
     protected float daño;
     protected int delta;
+    protected Rectangle areaColision;
+    protected int anchoSprite, altoSprite;
+    protected float anchoDibujado, altoDibujado;
 
     public Personaje(GameContainer container) {
         this.container = container;

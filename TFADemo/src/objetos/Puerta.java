@@ -4,7 +4,7 @@ import logica.Collidable;
 import logica.GestorColisiones;
 import org.newdawn.slick.geom.Shape;
 
-public class Puerta extends Objeto {
+public class Puerta extends Objeto implements Collidable{
 
     public Puerta(float posX, float posY, GestorColisiones gestor) {
         super(posX, posY, gestor);

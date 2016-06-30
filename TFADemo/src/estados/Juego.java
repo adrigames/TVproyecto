@@ -9,6 +9,7 @@ import logica.Camara;
 import logica.Collidable;
 import logica.GestorColisiones;
 import mapa.*;
+import objetos.Puerta;
 import org.newdawn.slick.*;
 import org.newdawn.slick.state.*;
 import personajes.*;
@@ -31,6 +32,10 @@ public class Juego extends BasicGameState{
     private Mapa pasilloFinal;
     private Mapa puebloInicio;
     private Heroe prota;
+    private Rey rey;
+    private Principe principe;
+    private Orco orco;
+    private Enemigo enemigo;
     private String mapaActual;
     private Sound musicaFondo;
     

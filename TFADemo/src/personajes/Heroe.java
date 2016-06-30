@@ -9,25 +9,22 @@ import org.newdawn.slick.geom.*;
 import mapa.*;
 import org.newdawn.slick.state.StateBasedGame;
 
-public class Heroe extends Personaje {
+public class Heroe extends Personaje implements Collidable{
     private Animation ataque;
     private ArrayList inventario;
     private boolean cambioDeMapa;
     private Puerta puerta;
-    private Rectangle areaColision;
     private Mapa mapa = null;
     private SpriteSheet prota;
     private SpriteSheet protaAtacar;
     private SpriteSheet protaMuerte;
     private GestorColisiones gestor;
-    private int anchoSprite, altoSprite;
-    private float anchoDibujado, altoDibujado;
     //private String mapaActual = "puebloInicio";
     
     public Heroe(GameContainer container,StateBasedGame game,Collidable colisiones, GestorColisiones gestor) throws SlickException {
         super(container);
         this.gestor = gestor;
-        //gestor.recordItem(this);
+        gestor.recordItem(this);
         this.prota = new SpriteSheet("testdata/spritesPj/protagonistaMov.png",64,64);
         this.protaAtacar = new SpriteSheet("testdata/spritesPj/protagonistaAtacando.png",64,64);
         this.protaMuerte = new SpriteSheet("testdata/spritesPj/protagonistaMuerte.png",64,64);
@@ -173,11 +170,11 @@ public class Heroe extends Personaje {
     //Las interacciones de los objetos con el personaje van aquí.
     @Override
     public void alColisionar(Collidable colision) {
-        if(colision.getClass().getSimpleName().equals("Objetos.Puerta")){
+        if(colision.getClass().getSimpleName().equals("objetos.Puerta")){
             this.puerta = (Puerta)colision;
+            cambioDeMapa = true;
             Input input = container.getInput();
             if(input.isKeyPressed(Input.KEY_F)){
-                cambioDeMapa = true;
                 System.out.println("BIEEEEEEEEEEEEEEEEN");
             }
             
