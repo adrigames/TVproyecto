@@ -109,22 +109,22 @@ public class Juego extends BasicGameState{
             case "camino":
                 mapa = castilloPrincipe1;
                 mapaActual = "castilloPrincipe1";
-                musicaFondo = new Sound ("testdata/musicaPrincipe.ogg");
+                musicaFondo = new Sound("testdata/musicaPrincipe.ogg");
                 break;
             case "habitacionPrincipe":
                 mapa = ciudad;
                 mapaActual = "ciudad";
-                musicaFondo = new Sound ("testdata/musicaPrincipe.ogg");
+                musicaFondo = new Sound("testdata/musicaPrincipe.ogg");
                 break;
             case "castilloPrincipe1":
                 mapa = castilloPrincipe2;
                 mapaActual = "castilloPrincipe2";
-                musicaFondo = new Sound ("testdata/musicaCastillo.ogg");
+                musicaFondo = new Sound("testdata/musicaCastillo.ogg");
                 break;
             case "castilloPrincipe2":
                 mapa = habitacionPrincipe;
                 mapaActual = "habitacionPrincipe";
-                musicaFondo = new Sound ("testdata/musicaCastillo.ogg");
+                musicaFondo = new Sound("testdata/musicaCastillo.ogg");
                 break;
             /*case "habitacionPrincipe":
                 mapa = camino;
@@ -134,22 +134,22 @@ public class Juego extends BasicGameState{
             case "ciudad":
                 mapa = castilloReal1;
                 mapaActual = "castilloReal1";
-                musicaFondo = new Sound ("testdata/musicaCastillo.ogg");
+                musicaFondo = new Sound("testdata/musicaCastillo.ogg");
                 break;
             case "castilloReal1":
                 mapa = castilloReal2;
                 mapaActual = "castilloReal2";
-                musicaFondo = new Sound ("testdata/musicaCastillo.ogg");
+                musicaFondo = new Sound("testdata/musicaCastillo.ogg");
                 break;
             case "castilloReal2":
                 mapa = pasilloFinal;
                 mapaActual = "pasillo";
-                musicaFondo = new Sound ("testdata/musicaCastillo.ogg");
+                musicaFondo = new Sound("testdata/musicaCastillo.ogg");
                 break;
             case "pasillo":
                 mapa = habitacionRey;
                 mapaActual = "habitacionRey";
-                musicaFondo = new Sound ("testdata/musicaRey.ogg");
+                musicaFondo = new Sound("testdata/musicaRey.ogg");
                 break;
         }
     }
