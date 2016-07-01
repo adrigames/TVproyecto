@@ -1,15 +1,9 @@
 package estados;
 
-/**
- * CLASE JUEGO DE PRUEBA PARA QUE FUNCIONEN LOS MENÚS
- * EN CUANTO ESTÉ EL JUEGO CASI TERMINADO, SE MODIFICA EN FUNCIÓN A LO QUE TENEMOS
- */
-
 import logica.Camara;
 import logica.Collidable;
 import logica.GestorColisiones;
 import mapa.*;
-import objetos.Puerta;
 import org.newdawn.slick.*;
 import org.newdawn.slick.state.*;
 import personajes.*;
