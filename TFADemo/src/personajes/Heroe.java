@@ -51,8 +51,8 @@ public class Heroe extends Personaje implements Collidable{
         altoDibujado = altoSprite * 2f;
         areaColision = new Rectangle(jugadorX, jugadorY, anchoDibujado, altoDibujado);
         mapa = new PuebloInicio(container,game);
-        sonidoAtacar = new Sound("testdata/sonidoAtaque.ogg");
-        sonidoPaso = new Sound("testdata/sonidoPaso.ogg");
+        sonidoAtacar = new Sound("testdata/sonidoAtaque.wav");
+        sonidoPaso = new Sound("testdata/sonidoPaso.wav");
         
         /*for (int i = 0; i < 9; i++) { 
             down.addFrame(prota.getSprite(i, 10), 100);
