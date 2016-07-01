@@ -82,9 +82,9 @@ public class Heroe extends Personaje implements Collidable{
         Input input = container.getInput();
         if(vida>0){
             if (input.isKeyDown(Input.KEY_UP)) {     
-                if (input.isKeyDown(Input.KEY_UP) && input.isKeyDown(Input.KEY_Q))
+                if (input.isKeyDown(Input.KEY_UP) && input.isKeyDown(Input.KEY_Q)){
                     jugador = atacarUp;
-                    sonidoAtacar.play();
+                    sonidoAtacar.play();}
                 else{
                     jugador = up;
                     sonidoPaso.play();
@@ -94,9 +94,9 @@ public class Heroe extends Personaje implements Collidable{
 
                 }
             else if (input.isKeyDown(Input.KEY_DOWN)){
-                if (input.isKeyDown(Input.KEY_DOWN) && input.isKeyDown(Input.KEY_Q))
+                if (input.isKeyDown(Input.KEY_DOWN) && input.isKeyDown(Input.KEY_Q)){
                     jugador = atacarDown;
-                    sonidoAtacar.play();
+                    sonidoAtacar.play();}
                 else{
                     jugador = down;
                     sonidoPaso.play();
@@ -105,9 +105,9 @@ public class Heroe extends Personaje implements Collidable{
                 jugadorY += delta * 0.1f;
             }
             else if (input.isKeyDown(Input.KEY_LEFT)){
-                if (input.isKeyDown(Input.KEY_LEFT) && input.isKeyDown(Input.KEY_Q))
+                if (input.isKeyDown(Input.KEY_LEFT) && input.isKeyDown(Input.KEY_Q)){
                     jugador = atacarLeft;
-                    sonidoAtacar.play();
+                    sonidoAtacar.play();}
                 else{
                     jugador = left;
                     sonidoPaso.play();
@@ -116,9 +116,9 @@ public class Heroe extends Personaje implements Collidable{
                 jugadorX -= delta * 0.1f;
             }
             else if (input.isKeyDown(Input.KEY_RIGHT)){
-                if (input.isKeyDown(Input.KEY_RIGHT) && input.isKeyDown(Input.KEY_Q))
+                if (input.isKeyDown(Input.KEY_RIGHT) && input.isKeyDown(Input.KEY_Q)){
                     jugador = atacarRight;
-                    sonidoAtacar.play();
+                    sonidoAtacar.play();}
                 else{
                     jugador = right;
                     sonidoPaso.play();
