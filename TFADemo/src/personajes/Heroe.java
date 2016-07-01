@@ -19,6 +19,8 @@ public class Heroe extends Personaje implements Collidable{
     private SpriteSheet protaAtacar;
     private SpriteSheet protaMuerte;
     private GestorColisiones gestor;
+    private Sound sonidoAtacar;
+    private Sound sonidoPaso;
     //private String mapaActual = "puebloInicio";
     
     public Heroe(GameContainer container,StateBasedGame game,Collidable colisiones, GestorColisiones gestor) throws SlickException {
@@ -49,6 +51,8 @@ public class Heroe extends Personaje implements Collidable{
         altoDibujado = altoSprite * 2f;
         areaColision = new Rectangle(jugadorX, jugadorY, anchoDibujado, altoDibujado);
         mapa = new PuebloInicio(container,game);
+        sonidoAtacar = new Sound("testdata/sonidoAtaque.ogg");
+        sonidoPaso = new Sound("testdata/sonidoPaso.ogg");
         
         /*for (int i = 0; i < 9; i++) { 
             down.addFrame(prota.getSprite(i, 10), 100);
@@ -80,8 +84,10 @@ public class Heroe extends Personaje implements Collidable{
             if (input.isKeyDown(Input.KEY_UP)) {     
                 if (input.isKeyDown(Input.KEY_UP) && input.isKeyDown(Input.KEY_Q))
                     jugador = atacarUp;
+                    sonidoAtacar.play();
                 else{
                     jugador = up;
+                    sonidoPaso.play();
                 }
                 jugador.update(delta*2);
                 jugadorY -= delta * 0.1f;
@@ -90,8 +96,10 @@ public class Heroe extends Personaje implements Collidable{
             else if (input.isKeyDown(Input.KEY_DOWN)){
                 if (input.isKeyDown(Input.KEY_DOWN) && input.isKeyDown(Input.KEY_Q))
                     jugador = atacarDown;
+                    sonidoAtacar.play();
                 else{
                     jugador = down;
+                    sonidoPaso.play();
                 }
                 jugador.update(delta*2);
                 jugadorY += delta * 0.1f;
@@ -99,8 +107,10 @@ public class Heroe extends Personaje implements Collidable{
             else if (input.isKeyDown(Input.KEY_LEFT)){
                 if (input.isKeyDown(Input.KEY_LEFT) && input.isKeyDown(Input.KEY_Q))
                     jugador = atacarLeft;
+                    sonidoAtacar.play();
                 else{
                     jugador = left;
+                    sonidoPaso.play();
                 }
                 jugador.update(delta*2);
                 jugadorX -= delta * 0.1f;
@@ -108,8 +118,10 @@ public class Heroe extends Personaje implements Collidable{
             else if (input.isKeyDown(Input.KEY_RIGHT)){
                 if (input.isKeyDown(Input.KEY_RIGHT) && input.isKeyDown(Input.KEY_Q))
                     jugador = atacarRight;
+                    sonidoAtacar.play();
                 else{
                     jugador = right;
+                    sonidoPaso.play();
                 }
                 jugador.update(delta*2);
                 jugadorX += delta * 0.1f;
@@ -118,15 +130,19 @@ public class Heroe extends Personaje implements Collidable{
             else if (input.isKeyDown(Input.KEY_Q)){ 
                 if(jugador == up){
                     jugador = atacarUp;
+                    sonidoAtacar.play();
                 }
                 else if(jugador == down){
                     jugador = atacarDown;
+                    sonidoAtacar.play();
                 }
                 else if(jugador == left){
                     jugador = atacarLeft;
+                    sonidoAtacar.play();
                 }
                 else if(jugador == right){
                     jugador = atacarRight;
+                    sonidoAtacar.play();
                 }
                 jugador.update(delta*2);
             }
