@@ -70,7 +70,7 @@ public class Juego extends BasicGameState{
         mapa.getMapa().render(-32,-10);
         g.translate(camara.getCamX(),camara.getCamY());
         prota.getJugador().draw(prota.getJugadorX(),prota.getJugadorY());
-        musicaFondo.loop();
+        musicaFondo.loop(1f, 0.50f);
         
     }
 
