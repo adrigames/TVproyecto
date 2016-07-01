@@ -67,12 +67,11 @@ public class Juego extends BasicGameState{
      */
     @Override
     public void render(GameContainer container, StateBasedGame game, Graphics g) throws SlickException {
-        //mapa.getMapa().render(-32,-10);
+        mapa.getMapa().render(-32,-10);
         //mapa.getMapa().render((int)(prota.getJugadorX()*-1),(int) (prota.getJugadorY()*-1));
-        mapa.getMapa().render(0, 0);
         g.translate(camara.getCamX(),camara.getCamY());
         prota.getJugador().draw(prota.getJugadorX(),prota.getJugadorY());
-        musicaFondo.loop(1f, 0.50f);
+        musicaFondo.loop(1f, 0.15f);
         
     }
 
@@ -82,7 +81,7 @@ public class Juego extends BasicGameState{
     @Override
     public void update(GameContainer container, StateBasedGame game, int delta) throws SlickException {
         prota.movement(delta);
-        camara.moverCamara();
+        //camara.moverCamara();
         Input entrada = container.getInput();
         if (entrada.isKeyPressed(Input.KEY_P)) {
             game.enterState(4);     //Al menú de pausa
